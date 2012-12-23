@@ -1,0 +1,574 @@
+\chapter{SETS}\label{chap:1}
+\section*{INTRODUCTION}
+This module aims to provide the material necessary to introduce the mathematical concept of sets and set operations to DepEd Grade 7 students. 
+\section*{OBJECTIVES}
+This module is made with the goal of helping the learners:
+\begin{enumerate}
+\item Be able to explore set concepts and set operations.
+\item Describe and illustrate well-defined sets, subsets, the universal set, and the null set.
+\item Define and describe the union and intersection of sets, and the complement of a set.
+\item Use Venn diagrams to represent sets, subsets, and set operations.
+\item Solve math problems using sets.
+\end{enumerate}
+\section*{TIME ALLOTMENT}
+\subsection*{Morning Activities}
+\begin{tabularu}{ll}
+  Discussion on Set Concepts and Exercises &		1 hour\\
+	Discussion on Venn Diagrams and Problem Solving &	1.5 hours\\
+	Q and A			&				0.5 hours\\
+\end{tabularu}
+
+\subsection*{Afternoon Activities}
+\begin{tabularu}{ll}
+	Activity 1: Populating a Venn Diagram	&	45 minutes\\
+	Activity 2: Constructing a Venn Diagram problem &1 hour\\
+\end{tabularu}
+
+\subsection*{MATERIALS}
+\begin{itemize}
+\item Manila paper
+\item Masking tape
+\item Markers
+\end{itemize}
+
+\subsection*{DISCUSSION}
+A set is a \Bold{well-defined} collection of objects. Well-defined means that it must be clear from the definition if an object is a member of a set or not. This concept can be reinforced to students by providing examples similar to the one below:
+
+Given the following collections of objects, identify if the collection can be classified as a set, and if not, modify the definition to make it well-defined.
+\begin{enumerate}
+\item The collection of all participants in this seminar.
+\item  The collection of all rich people in Manila (or in your town/city).
+\item The collection of young teachers in your school.
+\item The collection of firstborn (panganay) students in the class.
+\item The collection of difficult to pronounce words in a dictionary.
+\item The collection of very large numbers.
+\item The collection of integers that are factors of five.
+\end{enumerate}
+The objects in a set are called the \Bold{elements} or \Bold{members} of the set. These objects can be anything: people, fruits, numbers, other sets, etc. For example, the number 7 is an element of the set of all odd integers. It is also possible for a set element to be a member of another set. For example, the number 7 is also a member of the set of all prime numbers.
+
+If an object $x$ is an element of a set $A$, it is said that $x$ belongs to $A$. This relationship is symbolized as $x\in A$. The symbol $\in$ is derived from the greek epsilon, $\epsilon$. The expression $x\notin A$ is used to mean that “$x$ is not in $A$”.
+
+\subsubsection{Equality of sets}
+Two sets $A$ and $B$ are said to be equal if they contain exactly the same elements, that is, every element of $A$ is also an element of $B$ and vice versa. The equality remains even if each set is defined differently. For example, sets $A$ and $B$ can be defined as follows:
+\begin{quote}
+$A =$ the set of all positive integers less than 10 that are even.\\
+$B =$ the set of all values $y$ such that $y=2n$ where $n$ is a natural number from 1 to 4.
+\end{quote}
+
+Both sets will contain the elements 2, 4, 6, and 8. We can say that the two sets are equal ($A=B$) even if they have different definitions.
+
+\subsubsection{The empty set}
+A set with no elements is referred to as the empty set or the null set. The null set can be denoted by the symbols $\varnothing$ or $\{\}$. Take note that $\varnothing\neq\{\varnothing\}$ and using the symbol $\{\varnothing\}$ to denote the empty set is a common mistake.
+
+\subsubsection{Defining sets}
+A set can be defined by listing its elements inside curly braces, separated by commas. This definition is sometimes referred to as the list method. See the examples below:
+\begin{enumerate}
+\item $A = \{1, 2, 3, 4, 5\}$
+\item $B = \{\mathrm{Petri, Mardan, Natnat, Sherwin, Mark}\}$	can be used for non-numeric elements
+\item $C = \{1, 2, 3, ..., 98, 99, 100\}$	ellipses can be used to imply elements
+The order of elements in a list is immaterial. The set $\{1, 2, 3\}$ is equal to the set $\{3, 1, 2\}$. Repetition or multiplicity of elements is also immaterial, and the sets $\{1, 2, 3\}$, $\{1, 1, 1, 2, 3\}$, and $\{3, 3, 1, 2, 2, 3\}$ are all equal.
+\end{enumerate}
+A set can be defined using a rule that specifies what elements are members of this set. This rule must be well-defined in accordance to our definition of what a set is. Examples of sets defined using the rule method are:
+\begin{enumerate}
+\item The set of all students in a your class whose surnames start with a vowel.
+\item The set of teachers in your school who have been teaching for three years or more.
+\item The set of all positive irrational numbers.
+\item The set of all negative integers divisible by five.
+\item The set of all ordered pairs $(x,y)$ that satisfy the equation $y=2x+1$ where $x$ and $y$ are integers.
+\item The set of real numbers between 1 and 2. (\textit{This example can be used to illustrate the limitations of the list method as its elements cannot be listed.})
+\end{enumerate}
+Sets can also be defined using the set-builder notation. This is a mathematical notation for describing a set by stating the properties that its members must satisfy. The set-builder notation has the form $A=\{x|\Phi(x)\}$ where a vertical bar separates $x$ and $\Phi(x)$, and $\Phi(x)$  indicates the properties that $x$ must satisfy. Examples of sets defined using set builder notation are:
+\begin{enumerate}
+\item $A=\{x|x\in\mathbb{R},x>-3\}$\hfill\textit{The set of all real numbers greater than $-3$.}
+\item $B=\{x|x\in\mathbb{R},x=x^2\}$ 	The set of all real numbers satisfying the	equation $x=x^2$, specifically $\{0, 1\}$
+\end{enumerate}
+\subsubsection{Subsets and Supersets}
+Given two sets $A$ and $B$, $A$ is a subset of $B$, indicated by $A\subseteq B$ if every element of $A$ is also an element of $B$. By this definition, it follows that if two sets are equal then they are subsets of each other. It also follows that a set is a subset of itself. If $A\subseteq B$, and $A\neq B$, then we say that $A$ is a proper subset of $B$, or $A\subset B$.
+
+If $A$ is a subset of $B$, then it follows that $B$ is a superset of $A$, indicated by $B\supseteq A$.
+
+The null set is a subset of every set, and every set is a subset of itself.
+
+Example: Given the following sets:
+
+$A = \{1, 2, 3\}	$\hfil $B = \{1, 2, 3\}$\hfil	$C = \{1, 2, 3, 4, 5\}$\hfil	$D = \{0, 1, 2, 3, 4, 5, 6\}$
+
+We can conclude the following relationships:
+\begin{enumerate}
+\item $A\subseteq B$ \qquad		$A$ is a subset of $B$
+\item $A\not\subseteq B$ \qquad	$A$ is not a proper subset of $B$
+\item $B\subset D$	\qquad $B$ is a proper subset of $D$
+\item $D\subset C$\qquad $D$ is a proper superset of $C$
+\end{enumerate}
+
+\subsubsection{Universal set and Complementation}
+The universal set is the set of all elements of all sets under consideration for a given problem. It can be said that all sets in a given problem are subsets of some universal set. The universal set is usually given the symbol $U$.
+
+In the previous example, we can take set $D = \{0, 1, 2, 3, 4, 5, 6\}$ as the universal set as it contains all the elements of all the sets under consideration. When studying the properties of the set of integers, or rational numbers, or irrational numbers, the set of real numbers can sometimes be taken as the universal set.
+
+The complement of a set $A$, denoted by $A'$ or $\bar{A}$ (read as “$A$-prime” or “$A$-complement”) is the set of all elements in the universal set that are not in $A$. Using the previous example, if $A = \{1, 2, 3\}$ and $U = \{0, 1, 2, 3, 4, 5, 6\}$, then $\bar{A}=\{0,4,5,6\}$.
+
+\subsubsection{Set operations}
+The union of two sets $A$ and $B$, denoted by $A\cup B$, is the set of all objects that are elements of either $A$ or $B$. 
+The intersection of two sets $A$ and $B$, denoted by $A\cap B$, is the set of all objects that are elements of both $A$ and $B$.
+
+If two sets $A$ and $B$ have no common elements, then the two sets are said to be disjoint. The intersection of disjoint sets is the null set.
+
+The difference of two sets $A$ and $B$, denoted by $A-B$ or $A\backslash B$, is the set of all elements that belong to $A$ but not to $B$. This is also referred to as the relative complement of $B$ with respect to $A$. Note that for the operation $A-B$, $B$ does not have to be a subset of $A$, or $B$ can contain elements that are not in $A$.
+
+\sampleexercise{Sample exercise on Set Operations:}
+Given the following sets, determine the result of the indicated set operations:
+
+\begin{tabularx}{\linewidth}{CC}
+$A = \{1, 3, 5, 7, 9\}$ & $D = \{1, 2, 3, 5, 8\}$\\
+$B = \{2, 3, 4, 5\}$ & $E = \{7, 8, 9\}$\\
+$C = \{5, 6, 8, 9\}$ & $F = \{5, 8, 10\}$\\
+\multicolumn{2}{c}{$U = \{\mathrm{set\, of\, counting\, the\, numbers\, from\, 1\, to\, 10}\}$} \\
+\end{tabularx}
+
+\begin{enumerate}
+\item $B\cap C$	\hfil		$\{5\}$
+\item $A\cup F$	\hfil 	$\{1, 3, 5, 7, 8, 9, 10\}$
+\item $B\cap E$ \hfil $\varnothing$ \hfil	$B$ and $E$ are disjoint
+\item $C-F$\hfil $\{6, 9\}$
+\item $A\cap B\cap F$\hfil $\{5\}$
+\item $(A-B)\cup (C-D)$ \hfil	$\{1, 6, 7, 9\}$
+\item $\bar{D}\cup\bar{F}$\hfil $\{1, 2, 3, 4, 6, 7, 9, 10\}$
+\item $(\bar{D}\cap\bar{A})$\hfil $\{1, 2, 3, 5, 7, 8, 9\}$
+\item $(B\cup C)\cap D$\hfil $\{2, 3, 5, 8\}$
+\item $\bar{(E\cup F)}\cap \bar{C}$\hfil $\{1, 2, 3, 4\}$
+\end{enumerate}
+
+\subsection*{Power Sets}
+The power set of a given set $A$ is the set of all subsets of $A$, including the null set and $A$ itself. For example, the power set of $A$, denoted by $P(A)$, given that $A = \{1, 2, 3\}$ is:
+\[P(A)=\{\varnothing,\{1\},\{2\},\{3\},\{1,2\},\{2,3\},\{1,3\},\{1,2,3\}\}.\]
+The number of subsets of a set $A$ is given by $2^n$, where $n$ is the number of elements of $A$.
+
+\subsection*{Cardinality}
+The cardinality of a set $A$, referred to as $|A|$, is the number of elements of set $A$.
+
+\subsection*{Venn Diagrams}
+Venn diagrams are diagrams that show all possible logical relations between given sets. Venn diagrams normally consists of overlapping circles, where the interior of each circle represents the elements of a given set.
+
+A Venn diagram must have $2^n$ regions, where $n$ is the number of sets under consideration.
+
+Examples of Venn Diagrams are shown in Figures \eqref{fig:1} and \eqref{fig:2}.
+\begin{figure}[h!]
+\centering
+\parbox[t][]{0.4\linewidth}{
+\begin{tikzpicture}
+\node (node1) [circle,text width=3cm,draw] at (1,0) {};
+\node (node2) [circle,text width=3cm,draw] at (2.5,0) {};
+\begin{pgfonlayer}{background}
+\node [rounded corners,draw,fit=(node1) (node2)] {};
+\end{pgfonlayer}
+\end{tikzpicture}
+\caption{Venn diagram for two sets (4 regions)}
+\label{fig:1}
+}
+\qquad
+\begin{minipage}[t]{0.4\linewidth}
+\begin{tikzpicture}
+\node (circ1) [circle,text width=3cm,draw] at (0,0) {};
+\node (circ2) [circle,text width=3cm,draw] at (1.5,0) {};
+\node (circ3) [circle,text width=3cm,draw] at (0.75,1.3) {};
+\begin{pgfonlayer}{background}
+\node [rounded corners,draw,fit=(circ1) (circ2) (circ3)] {};
+\end{pgfonlayer}
+\end{tikzpicture}
+\caption{Venn diagram for two sets (8 regions)}
+\label{fig:2}
+\end{minipage}
+\end{figure}
+
+Venn diagrams can be used to illustrate set operations by shading the appropriate region in a Venn diagram. For the diagrams in Figure \eqref{fig:20}, set $A$ is represented by the left circle and set $B$ is represented by the right circle.
+
+\begin{figure}[h]
+\centering
+	\subfigure[][$A\cup B$]{%
+		\label{fig:1a}%
+		\begin{tikzpicture}[very thick]
+		\node (circ1) [circle,text width=3cm,inner sep=0pt,fill=red] at (0,0) {};
+		\node (circ2) [circle,text width=3cm,inner sep=0pt,fill=red] at (1.5,0) {};
+		\draw (circ2) circle (1.5);
+		\draw (circ1) circle (1.5);
+		\begin{pgfonlayer}{background}
+		\node [rounded corners,draw,fit=(circ1) (circ2)] {};
+		\end{pgfonlayer}
+		\end{tikzpicture}
+		}%
+	\qquad
+	\subfigure[][$A\cap B$]{%
+		\label{fig:2a}%
+		\includegraphics[width=4.8cm]{venndiag2}
+		}\\
+	\subfigure[][$A-B$]{%
+		\label{fig:3}%
+		\includegraphics[width=4.8cm]{venndiag3}
+		}%
+	\qquad
+	\subfigure[][$A\cap B$]{%
+		\label{fig:4}%
+		\includegraphics[width=4.8cm]{venndiag4}
+		}%
+		\caption{Illustrating set operations by shading the appropriate region in a Venn diagram.}
+		\label{fig:20}
+\end{figure}
+
+\sampleexercise{Examples of set operations illustrated using Venn diagrams:}
+\begin{multicols}{2}
+\begin{enumerate}
+\item $A\cap B\cap C$
+\item $(A\cup B)\cap C$
+\item $(B-C)-A$
+\item $(A-C)\cup B$
+\item $(A\cap B)'\cap C'$
+\item $C\cap (B-A)'$
+\item $[A\cup (B\cap C)]-(B'\cup A)'$
+\item $[(B-C)\cup (A-B)]'\cap C$
+\end{enumerate}
+\end{multicols}
+
+\begin{figure}[h]
+\centering
+	\subfigure[][$A\cap B\cap C$]{%
+		\label{fig:5}%
+		\includegraphics[width=3cm]{venndiaga}
+		}%
+		\hfil
+	\subfigure[][$(A\cup B)\cap C$]{%
+		\label{fig:6}%
+		\includegraphics[width=3cm]{venndiagb}
+		}%
+		\hfil
+	\subfigure[][$(B-C)-A$]{%
+		\label{fig:7}%
+		\includegraphics[width=3cm]{venndiagc}
+		}%
+		\hfil
+	\subfigure[][$(A-C)\cup B$]{%
+		\label{fig:8}%
+		\includegraphics[width=3cm]{venndiagd}
+		}\\
+	\subfigure[][$(A\cap B)'\cap C'$]{%
+		\label{fig:9}%
+		\includegraphics[width=3cm]{venndiage}
+		}%
+		\hfil
+	\subfigure[][$C\cap (B-A)'$]{%
+		\label{fig:10}%
+		\includegraphics[width=3cm]{venndiagf}
+		}%
+		\hfil
+	\subfigure[][{$[A\cup (B\cap C)]-(B'\cup A)'$}]{%
+		\label{fig:11}%
+		\includegraphics[width=3cm]{venndiagg}
+		}%
+		\hfil
+	\subfigure[][{$[(B-C)\cup (A-B)]'\cap C$}]{%
+		\label{fig:12}%
+		\includegraphics[width=3cm]{venndiagh}
+		}%
+		\caption{Operations on sets using Venn diagrams.}
+		\label{fig:22}
+\end{figure}
+
+The results are in in Figures \eqref{fig:5} to \eqref{fig:12}.
+
+It is possible to construct Venn diagrams for more than three sets, but there must be $2^n$ regions on the resulting diagram. See Figure \eqref{fig:21} which shows Venn diagrams for four and five sets.
+
+\begin{figure}[h]
+\centering
+	\subfigure[][4-set Venn Diagram]{%
+		\label{fig:13}%
+		\includegraphics[width=3cm]{4setvenn}
+		}%
+		\hfil
+	\subfigure[][4-set Venn Diagram]{%
+		\label{fig:14}%
+		\includegraphics[width=3cm]{4setvenn2}
+		}%
+		\hfil
+	\subfigure[][5-set Venn Diagram]{%
+		\label{fig:15}%
+		\includegraphics[width=3cm]{5setvenn}
+		}%
+		\hfil
+	\subfigure[][6-set Venn Diagram]{%
+		\label{fig:16}%
+		\includegraphics[width=3cm]{5setvenn2}
+		}
+		\caption{Some Venn diagrams for more than three sets.}
+		\label{fig:21}
+\end{figure}
+
+\subsection*{Venn Diagram problems}
+A common exercise involving Venn diagrams is populating a Venn diagram with values corresponding to the information given in a problem. A sample problem is given below along with step by step instructions on populating the Venn diagram.
+It is important to note that the words “or” and “and”, when referring to set operations, denote union and intersection respectively.
+
+\sampleexercise{Example 1}
+\begin{quote}
+\begin{enumerate}
+\item Create a Venn diagram representing the number of students using each online service.
+
+\begin{tikzpicture}[very thick,node distance=1cm]
+\node (13) [circle,text width=2cm,draw] {};
+\node (10) [circle,text width=2cm,draw] at (13) [right=0.5cm] {};
+\node [left] at (13) {13};
+\node [right] at (10) {10};
+\node at ($(13)!0.5!(10)$) {2};
+\node (fb) [below left=1cm] at (13) {Facebook};
+\node (tw) [below right=1cm] at (10) {Twitter};
+\begin{pgfonlayer}{background}
+\node [rounded corners,fit=(fb) (tw) (13) (10),draw] {};
+\end{pgfonlayer}
+\end{tikzpicture}
+\item How many students use both Facebook and Twitter?
+\hfill Ans: 2
+\end{enumerate}
+\end{quote}
+
+\sampleexercise{Example 2}
+\begin{quote}
+100 people seated at different tables in a party were asked if their group had ordered any of the following items: Pancit, Fried Chicken, or Pork Adobo
+\begin{enumerate}
+\item 23 people ordered none of these items.
+\item 11 people ordered all three of these items.
+\item 29 had ordered Fried Chicken or Pork Adobo but did not order Pancit.
+\item 41 people ordered Pork Adobo.
+\item 46 people ordered at least two of these items.
+\item 13 had ordered Pancit and Pork Adobo but not ordered Fried Chicken.
+\item 26 people ordered Pancit and Fried Chicken.
+\end{enumerate}
+Create a Venn diagram representing the number of people who ordered each dish.
+\end{quote}
+\noindent
+\begin{tabularx}{\linewidth}{p{0.6in}@{}@{}p{0.6\linewidth}C}
+Step 1 & 
+Draw a Venn diagram for the three sets: People who ordered Pancit, Fried Chicken or Pork Adobo.
+& \includegraphics[width=\linewidth]{adobo1} \\
+Step 2 &
+Use the given information to populate regions on your Venn Diagram.
+&  \\
+ &
+“23 people ordered none of these items.”
+ & \includegraphics[width=\linewidth]{adobo2} \\
+ &
+“11 people ordered all three of these items.”
+
+\textit{This statement corresponds to the intersection of all three sets.
+}
+ & \includegraphics[width=\linewidth]{adobo3} \\
+ &
+“29 had ordered Fried Chicken or Pork Adobo but did not order Pancit”
+
+\textit{This statement corresponds to the expression $(FC)\cup(Adobo)-(Pancit)$ and the shaded region on the right. We don’t have enough data on the diagram yet to use this piece of information.}
+ & \includegraphics[width=\linewidth]{adobo4} \\
+	&
+“41 people ordered Pork Adobo”
+
+\textit{See the diagram for the region represented by this statement. We don’t have enough data yet to use this information.}
+ & \includegraphics[width=\linewidth]{adobo5} \\
+ &
+“46 people ordered at least two of these items”
+
+\textit{See the diagram for the region represented by this statement. We don’t have enough data yet to use this information.}
+ & \includegraphics[width=\linewidth]{adobo6} \\
+ &
+“13 had ordered Pancit and Pork Adobo but not ordered Fried Chicken”
+ & \includegraphics[width=\linewidth]{adobo7} \\
+\end{tabularx}
+
+%\noindent
+%\begin{tabularx}{\linewidth}{p{0.5in}@{}@{}p{0.6\linewidth}C}
+%\end{tabularx}
+
+\begin{tabularx}{\linewidth}{p{0.5in}@{}@{}p{0.6\linewidth}C}
+ & 
+“26 people ordered Pancit and Fried Chicken”
+
+\textit{Since the statement corresponds to the shaded area on the right, we can conclude that 15 people ordered Pancit and Fried Chicken but NOT Adobo.}
+ & \includegraphics[width=\linewidth]{adobo8} \\
+ &
+We now have enough data to process    Statement 5: “46 people ordered at least two of these items”
+
+\textit{Since the statement corresponds to the shaded area on the right, we can conclude that 7 people ordered both Fried Chicken and Adobo but NOT Pancit.}
+ & \includegraphics[width=\linewidth]{adobo9} \\
+ &
+We can refer again to Statement 4: “41 people ordered Pork Adobo”
+
+\textit{From the data on the diagram, we can conclude that 10 people ordered Pork Adobo only.
+}
+ & \includegraphics[width=\linewidth]{adobo10} \\
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{p{0.5in}@{}@{}p{0.6\linewidth}C}
+ &
+Going back to Statement 3: “29 had ordered Fried Chicken or Pork Adobo but did not order Pancit”
+
+\textit{We now have enough data on the diagram to conclude that 12 people ordered Fried Chicken only.}
+ & \includegraphics[width=\linewidth]{adobo11} \\
+ &
+Using the initial information that there are 100 patrons, we can complete the diagram by determining how many customers ordered Pancit only.
+ & \includegraphics[width=\linewidth]{adobo12} \\
+\end{tabularx}
+The completely filled-up Venn Diagram is the final answer.
+
+Here are additional problems on filling up Venn Diagrams:
+\begin{enumerate}
+\item A study was made of 1000 bodies of water in the country to determine what pollutants were in them.
+	\begin{enumerate}
+	\item 177 areas were clean
+	\item 101 areas were polluted only with crude oil
+	\item 439 areas were polluted with phosphates.
+	\item 72 areas were polluted with sulfur compound and crude oil, but not with phosphates.
+	\item 289 areas were polluted with phosphates, but not with crude oil.
+	\item 463 areas were polluted with sulfur compounds.
+	\item 137 areas were polluted with only phosphates.
+	\end{enumerate}
+	\begin{tikzpicture}[ultra thick]
+\node (circ2) [circle,text width=3cm,inner sep=0pt,draw] at (1.5,0) {};
+\node (circ3) [circle,text width=3cm,inner sep=0pt,draw] at (0.75,-1.3) {};
+\node (circ1) [circle,text width=3cm,inner sep=0pt,draw] at (0,0) {};
+\node (A) at ([shift={(135:1.5)}]circ1) [above left] {DepEd};
+\node (B) at ([shift={(45:1.5)}]circ2) [above right,align=left] {DOST};
+\node (C) at ([shift={(270:1.5)}]circ3) [below] {Speaker};
+\node (25) at (C) [left=2cm,red] {25};
+\node (3) at (circ3) [above=0.5cm] {3};
+\node (9) at ([xshift=5pt]circ2) [below=0.65cm] {9};
+\node (5) at ([xshift=-5pt]circ1) [below=0.65cm] {5};
+\node (4) at (circ3) [above=1.75cm] {4};
+\node (15) at (circ3) [below=0.5cm] {15};
+\node (24) at (circ2) [above right=0.4cm] {24};
+\node (15) at (circ1) [above left=0.5cm] {15};
+
+\begin{pgfonlayer}{background}
+\node [rounded corners,draw,fit=(A) (B) (C)] {};
+\end{pgfonlayer}
+\end{tikzpicture}
+\item 100 students were asked if they knew who any of the following are: The DepEd secretary, The Speaker of the House, and The DOST secretary.
+	\begin{enumerate}
+	\item 25 people did not know any of these.
+	\item 3 people knew all three.
+	\item 48 people knew who the Speaker of the House or the DOST secretary were but didn't know who the DepEd secretary was.
+	\item 40 people knew who the DOST secretary was.
+	\item 21 people knew who at least two of these were.
+	\item 7 people knew who the DepEd secretary and the DOST secretary were but didn't know who the Speaker of the House was.
+	\item 8 people knew who the DepEd secretary and the Speaker of the House were.
+	\end{enumerate}
+\begin{tikzpicture}[ultra thick]
+\node (circ2) [circle,text width=3cm,inner sep=0pt,draw] at (1.5,0) {};
+\node (circ3) [circle,text width=3cm,inner sep=0pt,draw] at (0.75,-1.3) {};
+\node (circ1) [circle,text width=3cm,inner sep=0pt,draw] at (0,0) {};
+\node (A) at ([shift={(135:1.5)}]circ1) [above left] {Oil};
+\node (B) at ([shift={(45:1.5)}]circ2) [above right,align=left] {Sulfur};
+\node (C) at ([shift={(270:1.5)}]circ3) [below] {Phosphates};
+\node (177) at (C) [left=1cm] {177};
+\node (28) at (circ3) [above=0.5cm] {28};
+\node (152) at ([xshift=5pt]circ2) [below=0.65cm] {152};
+\node (122) at ([xshift=-5pt]circ1) [below=0.65cm] {122};
+\node (72) at (circ3) [above=1.75cm] {72};
+\node (137) at (circ3) [below=0.5cm] {137};
+\node (211) at (circ2) [above right=0.4cm] {211};
+\node (101) at (circ1) [above left=0.5cm] {101};
+
+\begin{pgfonlayer}{background}
+\node [rounded corners,draw,fit=(A) (B) (C)] {};
+\end{pgfonlayer}
+\end{tikzpicture}
+\end{enumerate}
+
+\section*{SUGGESTED ACTIVITIES}
+Resource Speakers may choose which class activity will be done by the participants depending on
+your level of comfortableness with the activity, available materials, and remaining time.
+\subsection*{Activity 1: Constructing a Venn Diagram from a Survey Data}
+\subsubsection*{Objectives:}
+To construct a Venn Diagram problem based on survey data
+\subsubsection*{Preparation:}
+Group the participants into 10 groups. Each group is given several minutes to construct a
+simple preference survey. (e.g. TV channels they like to watch: kapamilya, kapuso, kapatid;
+sports they play: basketball, volleyball, bowling).
+\subsubsection*{Activity:}
+\begin{enumerate}
+\item Each group will survey all the participants based on the survey questions that they constructed. There should be 3 choices and the participants can tick all choices if applicable.
+\item After the members of the group surveys ALL the participants, the group tallies the data on a
+tally sheet (each group should be provided with a list of all participants).
+\item After the tallying all the data, the group constructs the Venn diagram.
+\item From the Venn diagram constructed, the group must design a Venn diagram problem.
+\item Each group will write down their problem on a sheet of Manila paper and post their
+problems on the wall.
+\item After the break, groups pair up and solve each others problem.
+\item After the alloted time, each group present their solution, and the problems and solutions
+are critiqued.
+\end{enumerate}
+Note: You may use a sample sheet like that found in Figure \eqref{fig:23} For an easier activity instead of 3 choices, 2 choices could be used for the survey.
+{\renewcommand{\arraystretch}{1.75}
+\begin{figure}
+\centering
+\begin{tabular}[m]{|l|l|l|l|}
+\hline
+\multicolumn{4}{|c|}{\LARGE\textbf{SURVEY FORM}}\\
+\hline
+Name of Participant & Choice 1 & Choice 2 & Choice 3\\ \cline{2-4}
+ & & & \\ \hline
+1 & & & \\ \hline
+2 & & & \\ \hline
+3 & & & \\ \hline
+4 & & & \\ \hline
+5 & & & \\ \hline
+6 & & & \\ \hline
+7 & & & \\ \hline
+8 & & & \\ \hline
+9 & & & \\ \hline
+10 & & & \\ \hline
+\end{tabular}
+\caption{Activity 1: Constructing a Venn Diagram from a Survey Data}
+\label{fig:23}
+\end{figure}
+}
+
+\subsection*{Activity 2: Populating a Venn Diagram}
+\subsubsection*{Objective:}
+ To integrate the Venn Diagram concepts with other subjects taken up by Grade 7 students. For this activity we can integrate some historical facts of SEA nations.
+
+\subsubsection*{Preparation:}
+\begin{enumerate}
+\item Construct a large Venn Diagram on the classroom floor with tape. Label each circle with a category. For this activity we can use the SEA countries Vietnam, Thailand, and the Philippines.
+\item Prepare notecards containing facts about the three countries. Here are some examples, which can be expanded as needed:
+\begin{enumerate}
+\item Monarchy\hfil	\textit{Thailand only}
+\item Colonized by Europeans \hfil		\textit{Vietnam and Philippines}
+\item Occupied by Japanese \hfil	\textit{All three countries}
+\item Predominantly Christian\hfil \textit{Philippines only}
+
+\end{enumerate}
+\item Optional: Pass around a handout containing historical information about these three countries. This can also be coordinated with the History teacher if these topics are already covered.
+\end{enumerate}
+
+\subsubsection*{Activity}
+\begin{enumerate}
+\item Have each student draw from a pile of notecards containing facts about the countries.
+\item Randomly select a student to read their fact to the class and then stand in the appropriate area of the Venn Diagram. 
+\item Encourage discussion and provide feedback as to the correct placement of the characteristics.
+\item Repeat steps 4 and 5 until all students are standing in the correct place in the Venn Diagram (use a model Venn Diagram if necessary).
+\item Summarize the results of the activity.
+\end{enumerate}
+This activity can be revised to integrate Venn diagram concepts with other academic topics like science or literary characters, or things that children enjoy like superhero superpowers.
+\subsection*{Activity 3:	Constructing a Venn Diagram Problem}
+\subsubsection*{Objectives:}
+\begin{enumerate}
+\item To construct a Venn Diagram problem based on personal information of the participants/students. 
+\item To determine the least amount of information that can be given about a problem that can still be used to populate a Venn Diagram.
+\end{enumerate}
+\subsubsection*{Preparation:}
+Prepare two surveys on personal preferences of students or participants. There should be three possible options for the participants to choose from (actors/actresses, food, subjects, etc.). The participants should be allowed to choose more than one option.
+\subsubsection*{Activity:}
+\begin{enumerate}
+\item Distribute the participants into two groups. Have each group fill up a different survey to generate the data they will need for their Venn Diagram activity.
+\item Each group should populate their own Venn Diagrams based on the results of the survey they filled up. A copy of the populated Venn Diagrams are given to the facilitator.
+\item On a piece of manila paper, each group should write down phrases that give information about their Venn Diagram. The goal is to give as little information as possible while ensuring that there is enough information to populate a Venn Diagram.
+\item The two teams swap information, and they will race to populate the Venn Diagram based on information provided by the other group. The group that completes first is declared the winner.
+\item If the losing team can show that it is impossible to populate a Venn Diagram based on the given information, then they are declared the winner instead.
+\item The two teams will share their techniques and difficulties encountered in constructing a Venn Diagram problem.
+\end{enumerate}
+
