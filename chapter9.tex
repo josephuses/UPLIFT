@@ -104,4 +104,137 @@ Therefore, the square has side of length 7 cm.
 \begin{example}
 \item The length of a rectangular garden is 3 meters more than its width. If the perimeter of the garden is
 50 meters, what is the area of the rectangle?
+
+\Solution
+
+\textit{Geometry Concept}
+
+A rectangle is a quadrilateral (4-sided polygon) with two pairs of congruent
+and parallel sides. Its four interior angles are all right angles.
+The formula for the perimeter ($P$) of a rectangle is $P = 2L + 2W$ where $L$ is
+the length and $W$ is the width of the rectangle.
+
+\begin{tikzpicture}[xscale=2]
+\draw (0,0) -- (1,0) -- (1,1) -- (0,1) -- cycle;
+\node [below] at (0.5,0) {$L$};
+\node [right] at (1,0.5) {$W$};
+\node [above] at (0.5,1) {$L$};
+\node [left] at (0,0.5) {$W$};
+\end{tikzpicture}
+
+\textit{Representation}
+\begin{align*}
+W&=\text{width of the rectangle}\\
+L&=W+3
+\end{align*}
+
+\textit{Equation:}
+\begin{align*}
+50 &= 2(W + 3) + 2W && \text{Using the formula for perimeter.}\\
+50 &= 2W + 6 + 2W \\
+44 &= 4W \\
+W &= 11 \\
+L &= 11 + 3 = 14 \\
+A &= (14)(11) = 154 && \text{Using the formula for area.}
+\end{align*}
+
+Therefore, the rectangle has an area of 154 $\cm^2$.
+\end{example}
+
+\begin{example}
+\Item The longest side of a triangle is twice as long as the shortest side and is also 2 cm longer than the third side. If the perimeter of the triangle is 33 cm, what is the length of each side?
+
+\Solution
+
+\textit{Geometry Concept:}
+
+A triangle is a 3-sided polygon. The formula for the perimeter ($P$) of a triangle is
+$P = a + b + c$ where $a$, $b$ and $c$ are the sides of the triangle.
+
+\begin{tikzpicture}
+\draw (0,0) -- (2,0) -- (0.5,1.5) -- cycle;
+\node [below] at (1,0) {$c$};
+\node [right] at (1.25,0.75) {$b$};
+\node [left] at (0.25,0.75) {$a$};
+\end{tikzpicture}
+
+\textit{Representation}
+
+\begin{align*}
+a&=x && \text{shortest side of the triangle}\\
+b&=2x && \text{longest side}\\
+c&=2x-2 && \text{third side}
+\end{align*}
+
+\textit{Equation}
+
+\begin{align*}
+33 &= x + 2x + 2x - 2 && \text{(Using the formula for the perimeter.)}\\
+35 &= 5x\\
+x &=7\\
+a&=x=7\\
+b&= 2x = 14\\
+c &= 2x - 2 = 12
+\end{align*}
+Therefore, the sides of the triangle are 7 cm, 12 cm and 14 cm.
+\end{example}
+
+\begin{example}
+\Item What is the measure of the base of an isosceles triangle if its perimeter is 50 cm and the length of one of its congruent sides exceeds the length of the base by 10 cm?
+
+\begin{tikzpicture}[yscale=2]
+\draw (0,0) -- (1,0) -- (0.5,1) -- cycle;
+\node [below] at (0.5,0) {base};
+\node [right] at (0.75,0.5) {leg};
+\node [left] at (0.25,0.5) {leg};
+\end{tikzpicture}
+
+\Solution
+
+\textit{Geometry Concept}
+
+An isosceles triangle is a triangle with two congruent sides. The congruent sides are
+called legs while the non-congruent side is called the base.
+
+\textit{Representation}
+
+\begin{align*}
+x&=\text{length of the base of the triangle}\\
+  x+10&=\text{length of the leg of the triangle}
+\end{align*}
+
+\textit{Equation}
+
+\begin{align*}
+50 &= x + 2(x + 10) && \text{(Using the formula for perimeter of triangles.)}\\
+50 &= x + 2x + 20\\
+30 &= 3x\\
+x &= 10
+\end{align*}
+Therefore, the base of the isosceles triangle is 10 cm.
+\end{example}
+
+\subsection*{PROBLEMS INVOLVING ANGLES OF POLYGONS}
+\begin{example}
+\Item The first angle of a triangle is triple that of the smallest angle. The second angle is 5 degrees more than the first angle. What is the measure of the smallest angle?
+
+\Solution
+
+\textit{Geometry Concept}
+
+A triangle has three interior angles and their measures sum up to 180 degrees.
+
+\textit{Representation}
+\begin{align*}
+x &= \text{smallest angle of the triangle}\\
+3x &= \text{first angle of the triangle}\\
+3x + 5 &= \text{second angle of the triangle}
+\end{align*}
+\textit{Equation}
+\begin{align*}
+x + 3x + 3x + 5 &= 180 && \text{(Sum of the angles of a triangle is $180^{\circ}$.)}\\
+7x &= 175\\
+x &= 25
+\end{align*}
+Therefore, the measure of the smallest angle of the triangle is 25 degrees.
 \end{example}
