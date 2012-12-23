@@ -1,0 +1,385 @@
+\documentclass[svgnames,a4paper]{report}
+
+\usepackage[inner=1.5in,outer=1in,top=1in,bottom=1in]{geometry}
+
+% \usepackage {ifluatex}
+
+%\usepackage{fontspec}
+%\defaultfontfeatures{Ligatures=TeX, Numbers=OldStyle, SmallCapsFeatures={LetterSpace=8, Numbers=OldStyle}}
+
+%\setmainfont
+% {Linux Libertine}
+% {Gentium Book Basic}
+%\usepackage{pst-pdf}
+\usepackage{graphicx}
+\usepackage{cprotect}
+\usepackage{picins}
+%\usepackage{parpic}
+%\usepackage{MnSymbol}
+\usepackage{multirow}
+\usepackage{textcomp}
+\def\anumber{\textit{a number}}
+%\usepackage{caption}
+%\usepackage{titlesec}
+\newcommand{\Answers}{\textbf{Answers}}
+\newcommand{\Problems}{\textbf{Problems}}
+%\usepackage{tabularx}
+%\newenvironment{\begin{answer}}{\begin{enumerate}}{\end{enumerate}}
+%\renewcommand\thepart{\Alph{part}}
+%\newcounter{module}
+%\renewcommand\thechapter{\arabic{module}}
+\usepackage{titlesec}
+\titleformat{\chapter}[display]{\Huge}{
+\begin{tikzpicture}[remember picture,overlay,xshift=5in,yshift=0.25in]
+\node (chapter) [align=center] {Module};
+\node at (chapter.east) [gray,opacity=0.5] {\fontsize{80}{80}\bfseries\itshape\selectfont\thechapter};
+\end{tikzpicture}
+}{12pt}{}[\color{blue!50}\kern2pt\hrule\kern1pt]
+
+%\titleformat{\section}[display]{\Large}{}{12pt}{\thesection}[\color{blue!50}\kern2pt\hrule\kern1pt]
+
+
+\usepackage{mdframed}
+\usepackage{longtable}
+\usepackage{cancel}
+\usepackage{calc}
+\usepackage{marvosym}
+\usepackage{microtype}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage[charter]{mathdesign}
+\usepackage{libertine}
+\usepackage[frenchmath,italic]{mathastext}
+%\usepackage{ntxmath}
+%\usepackage{newtx}
+%\usepackage{fontspec}
+%\setsansfont [Ligatures=TeX,Scale=MatchLowercase] {Myriad Pro}
+%   \setmainfont [Ligatures=TeX,Scale=MatchLowercase] {Charter BT}
+ %  \setmathfont 
+\newenvironment{tabularu}{\begin{tabular}}{\end{tabular}}
+\newenvironment{Quote}{\begin{quote}}{\end{quote}}
+\usepackage{makeidx}
+\makeindex
+\newcommand{\Php}{Php}
+\newcommand{\Bold}[1]{\textbf{#1}\index{#1}}
+\newcommand{\Solution}{\textbf{Solution}}
+\newcommand*{\CHECK}{\textbf{Check}}
+\newcommand{\Ital}[1]{\textit{#1}}
+\newcommand{\LATIN}[1]{\textit{#1}}
+\newcommand{\sampleexercise}[1]{\subsubsection{#1}}
+\newenvironment*{exercise}{\begin{enumerate}}{\end{enumerate}}
+\usepackage{tabularx}
+\renewcommand{\tabularxcolumn}[1]{m{#1}}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{Y}{>{\centering\arraybackslash}p{0.15\linewidth}}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,shapes.misc,calc,positioning,backgrounds,fit,arrows,decorations,decorations.pathmorphing,decorations.pathreplacing}
+\usepackage{smartdiagram}
+%\usetikzlibrary{calc,arrows}
+\tikzset{
+excursus arrow/.style={%
+line width=2pt,
+draw=gray!40,
+rounded corners=2ex,
+},
+excursus head/.style={
+fill=white,
+font=\bfseries\sffamily,
+text=gray!80,
+anchor=base west,
+},
+}
+\mdfdefinestyle{digressionarrows}{%
+leftmargin=10pt,%
+rightmargin=10pt,%
+linecolor=gray,linewidth=2pt,%
+frametitlerule=true,%
+frametitlebackgroundcolor=gray!20,
+innertopmargin=\topskip,
+frametitle=Think back}
+
+\mdfdefinestyle{fact}{%
+leftmargin=10pt,%
+rightmargin=10pt,%
+linecolor=orange,linewidth=2pt,%
+frametitlerule=true,%
+frametitlebackgroundcolor=orange!20,
+innertopmargin=\topskip,
+frametitle=Fact}
+
+\pgfdeclarelayer{background layer}
+\pgfdeclarelayer{foreground layer}
+\pgfsetlayers{background layer,main,foreground layer,background}
+
+\definecolor{mybluecolor}{rgb}{.204,.486,.741}
+\usepackage{lipsum}
+
+\usepackage{caption}
+
+%%% Define a new caption separator
+%\DeclareCaptionLabelSeparator*{newlinerule}{\par\kern2pt\hrule\kern1pt}
+\DeclareCaptionLabelSeparator*{newlinerule}{\par\kern2pt\rule{2in}{1pt}\par\kern1pt}
+
+\captionsetup{
+  font=small,
+  format=plain,
+  labelformat=simple,
+  labelsep=newlinerule,
+  singlelinecheck=true,
+  labelfont={color=mybluecolor,bf},
+}
+
+\usepackage[hang,raggedright]{subfigure}
+\usepackage{enumerate}
+\newcommand{\answerline}[1]{
+\begin{tabularx}{0.2\linewidth}{p{0.5in}>{\raggedright\arraybackslash}X}
+#1 & \makebox[0.5in]{\hrulefill}\\
+\end{tabularx}
+}
+
+\newmdenv[shadow=true,
+shadowsize=11pt,
+linewidth=8pt,
+frametitlerule=true,
+roundcorner=10pt,
+]{myshadowbox}
+\newenvironment{property}{\begin{myshadowbox}}{\end{myshadowbox}}
+
+\newenvironment{thinkback}{\begin{mdframed}[style=digressionarrows]}{\end{mdframed}}
+\newenvironment{fact}{\begin{mdframed}[style=fact]}{\end{mdframed}}
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+\usepackage{etoolbox}
+\newcommand{\Line}{\makebox[0.5in]{\hrulefill}}
+\newcommand{\tikzmark}[1]{\tikz[overlay,remember picture] \node (#1) {};}
+\newcommand{\Tikzmark}[2]{\tikz[overlay,remember picture] \node (#1) {#2};}
+%\usepackage{multicol}
+\usepackage{makerobust}
+\MakeRobustCommand{\textpeso}
+\usepackage{colortbl}
+\def\T{\,\mathrm{t}}
+\def\dkm{\,\mathrm{dkm}}
+\def\gal{\,\mathrm{gal}}
+\def\qt{\,\mathrm{qt}}
+\def\yd{\,\mathrm{yd}}
+\def\IN{\,\mathrm{in}}
+\def\ft{\,\mathrm{ft}}
+\def\m{\,\mathrm{m}}
+\def\cm{\,\mathrm{cm}}
+\def\Li{\,\mathrm{L}}
+\def\mL{\ensuremath{\,\mathrm{mL}}}
+\def\mm{\,\mathrm{mm}}
+\def\dm{\,\mathrm{dm}}
+\def\km{\ensuremath{\,\mathrm{km}}}
+\def\mi{\,\mathrm{mi}}
+\def\oz{\,\mathrm{oz}}
+\def\g{\,\mathrm{g}}
+\def\C{\ensuremath{\,\mathrm{C}}}
+\def\F{\ensuremath{\,\mathrm{F}}}
+\def\and{\,\text{and}\,}
+\def\degree{\ensuremath{\,\mathrm{^{\circ}}}}
+\usepackage{multicol}
+\newcommand{\yourown}{Try these practice problems on your own.}
+\newcommand{\Underline}[1]{\underline{#1}}
+%\renewcommand{\familydefault}{\sfdefault}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+%\fancyhead{}%
+\fancyfoot{}%
+\fancyfoot[RE,LO]{MATHEMATICS MODULE || Page \textbf{\thepage} of \textbf{\pageref{LastPage}}}
+%\fancyhead[RE,LO]{\thechapter}
+\fancyhead[RO,LE]{\textcopyright{} UPLIFT}
+%\newcounter{cexample}
+\newenvironment{example}{%
+\par\vspace*{\topskip}\noindent
+\tikz {\node (A) [baseline={(current bounding box.east)},rectangle,minimum height=5pt,minimum width=5pt,fill=blue!50!white] {};
+\draw [color=blue!50!white] ([xshift=1pt]A.east) -- +(2in,0) node [pos=0,above=0.5\topskip,text=blue!50!white,align=left] {\textbf{Example}};
+}%
+\begin{enumerate}
+}{\end{enumerate}
+\hfill \tikz {\node (A) [rectangle,minimum height=5pt,minimum width=5pt,fill=blue!50!white] {};
+\draw [color=blue!50!white] (A) -- +(-2in,0);
+}
+}
+\usepackage{paralist}
+\usepackage[backend=bibtex]{biblatex}
+\usepackage{pdfcomment}
+\addbibresource{upliftbib.bib}
+\DefineBibliographyStrings{english}{
+bibliography={REFERENCES}
+}
+%\newtheorem{definition}{Definition}
+\newcommand{\subsubsubsection}[1]{\subsubsection*{#1}}
+\definecolor{captioncolor}{HTML}{005587}
+\definecolor{linecolor}{HTML}{0074C8}
+\definecolor{fillcolor}{cmyk}{0.1,0.05,0,0}
+\definecolor{brickcolor}{HTML}{F0D8B2}
+\definecolor{blockcolor}{HTML}{B6B6B6}
+\definecolor{groundcolor}{HTML}{E4D8C5}
+\definecolor{earthcolor}{HTML}{C5FFFF}
+\definecolor{watercolor}{cmyk}{0.1,0.05,0,0}
+\definecolor{codecolor}{HTML}{FFF7E0}
+\definecolor{linenumcolor}{HTML}{8C8C8C}
+%\definecolor{headercolor}{HTML}{F5F5F5}
+\definecolor{headercolor}{HTML}{E9EFEF}
+\definecolor{insideo}{HTML}{798084}
+\definecolor{insidei}{HTML}{F0F0F0}
+\definecolor{outer}{HTML}{424296}
+\definecolor{inner}{HTML}{D8D8FF}
+
+\newcommand*{\rotatedbox}[1]{
+\tikz \node [rotate=180] {#1
+  };
+}
+%%%%%%%%%% HERE COMES THE PATCH %%%%%%%%%%
+\usepackage{etoolbox}
+
+\makeatletter
+\pretocmd\start@align
+{%
+  \let\everycr\CT@everycr
+  \CT@start
+}{}{}
+\apptocmd{\endalign}{\CT@end}{}{}
+\makeatother
+%%%%%%%%%% END PATCH %%%%%%%%%%
+
+%\usepackage{hf-tikz}
+% put color to \boxed math command
+\newcommand*{\boxcolor}{orange}
+\makeatletter
+\renewcommand{\boxed}[1]{\textcolor{\boxcolor}{%
+\tikz[baseline={([yshift=-1.5ex]current bounding box.center)}] \node [rectangle, minimum width=1ex,rounded corners,draw] {\normalcolor\m@th$\displaystyle#1$};}}
+\makeatother
+\newcommand{\Item}{\item}
+\mdfdefinestyle{theoremstyle}{shadow=true,
+				  shadowsize=5pt,
+          linewidth=5pt,
+          frametitlerule=true,
+          roundcorner=10pt,
+          innertopmargin=\topskip}
+\newcommand{\thm}[1]{#1\index{#1}}
+\mdtheorem[style=theoremstyle]{definition}{Definition}
+\BeforeBeginEnvironment{definition}{\vspace*{\topskip}}
+\AfterEndEnvironment{definition}{\vspace*{\topskip}}
+
+%\usepackage[explicit]{titlesec}
+%\newcommand*\chapterlabel{}
+%\titleformat{\chapter}
+%  {\gdef\chapterlabel{}
+%   \normalfont\sffamily\Huge\bfseries\scshape}
+%  {\gdef\chapterlabel{\thechapter\ }}{0pt}
+%  {\begin{tikzpicture}[remember picture,overlay]
+%    \node[yshift=-3cm] at (current page.north west)
+%      {\begin{tikzpicture}[remember picture, overlay]
+%        \draw[fill=LightSkyBlue] (0,0) rectangle
+%          (\paperwidth,3cm);
+%        \node[anchor=east,xshift=.9\paperwidth,rectangle,
+%              rounded corners=20pt,inner sep=11pt,
+%              fill=MidnightBlue]
+%              {\color{white}\chapterlabel#1};
+%       \end{tikzpicture}
+%      };
+%   \end{tikzpicture}
+%  }
+%\titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+
+\begin{document}
+%\thispagestyle{empty}
+\begin{titlepage}
+\begin{center}
+\bfseries
+{\LARGE UPGRADING PROGRAM: LEARNING}\\[24pt]
+{\LARGE INSTITUTE FOR TEACHERS}\\[24pt]
+{\LARGE UPLIFT}
+\vfill
+
+{\LARGE MATHEMATICS MODULE}
+\vfill
+
+\textbf{This module belongs to:}\\[24pt]
+
+\noindent
+\hrulefill
+\end{center}
+\newpage
+\thispagestyle{empty}
+\vfil
+\begin{center}
+{\LARGE \bfseries Module Writers}\\[12pt]
+Jonellyn S. Albano (PSHS Ilocos Region Campus)\\
+Daryl R. Alegarbes (PSHS Southern Mindanao Campus)\\
+Ronnie R. Calanno (PSHS Ilocos Region Campus)\\
+Leo Andrei A. Crisologo (PSHS Main Campus)\\
+Maricel B. Dumlao (PSHS Cagayan Valley Campus)\\
+Rommel O. Gregorio (PSHS Cordillera Administrative Region Campus)\\
+Rosalinda O. Luwang (PSHS Cagayan Valley Campus)\\
+Mary Gay Antonette G. Magpantay (PSHS Main Campus)\\
+Ronnalee I. Navasca-Orteza (PSHS Ilocos Region Campus)\\
+Flordelino C. Orteza, Jr. (PSHS Ilocos Region Campus)\\
+Herminigilda C. Salac (PSHS Main Campus)\\
+Fortunato A. Tacuboy III (PSHS Main Campus)
+\end{center}
+\vfil
+\begin{center}
+{\LARGE\bfseries Module Editors}\\[12pt]
+Mark John V. Ayaay (PSHS Main Campus)\\
+Leo Andrei A. Crisologo (PSHS Main Campus)\\
+Jose Manresa D. Español IV (PSHS Main Campus)\\
+Kiel F. Granada (PSHS Main Campus)\\
+Mario Danilo R. Llanura (PSHS Main Campus)\\
+Mary Gay Antonette G. Magpantay (PSHS Main Campus)\\
+Herminigilda C. Salac (PSHS Main Campus)\\
+Joyce Marianne B. Simpas (PSHS Main Campus)\\
+Fortunato A. Tacuboy III (PSHS Main Campus)
+\end{center}
+\newpage
+\thispagestyle{empty}
+
+\begin{center}
+{\LARGE\bfseries Module Objectives}
+\begin{enumerate}
+\item To be able to apply different perspectives in solving mathematics
+problems.
+\item To be able to integrate technology for mathematics inquiry and problem
+solving.
+\item To be able to use appropriate pedagogy and strategies in teaching
+mathematics.
+\item To be able to enhance English communication skills to improve delivery
+of content and in constructing quality assessment tools.
+\item To be able to clarify common misconceptions in mathematics.
+\item To be able to appreciate mathematics.
+\end{enumerate}
+\end{center}
+\end{titlepage}
+\thispagestyle{empty}
+\tableofcontents
+\thispagestyle{empty}
+%\tableoffigures
+\pagestyle{fancy}
+\nocite{*}
+\input{chapter1.tex}
+\printbibliography[keyword=Module1,heading=subbibliography,title={REFERENCES}]
+\input{chapter2.tex}
+\printbibliography[keyword=Module2,heading=subbibliography,title={REFERENCES}]
+\input{chapter3.tex}
+\printbibliography[keyword=Module3,heading=subbibliography,title={REFERENCES}]
+\input{chapter4.tex}
+\printbibliography[keyword=Module4,heading=subbibliography,title={REFERENCES}]
+\input{chapter5.tex}
+\printbibliography[keyword=Module5,heading=subbibliography,title={REFERENCES}]
+\input{chapter6.tex}
+\printbibliography[keyword=Module6,heading=subbibliography,title={REFERENCES}]
+\input{chapter7.tex}
+\printbibliography[keyword=Module7,heading=subbibliography,title={REFERENCES}]
+\input{chapter8.tex}
+\printbibliography[keyword=Module8,heading=subbibliography,title={REFERENCES}]
+\input{chapter9.tex}
+\printbibliography[keyword=Module9,heading=subbibliography,title={REFERENCES}]
+\input{chapter10.tex}
+\input{chapter11.tex}
+\printbibliography
+\printindex
+
+\end{document}
