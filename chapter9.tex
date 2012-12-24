@@ -1,4 +1,4 @@
-\chapter{SOLVING WORD PROBLEMS IN GEOMETRY}
+\chapter[SOLVING WORD PROBLEMS]{SOLVING WORD PROBLEMS\\ IN GEOMETRY}
 \section*{INTRODUCTION}
 This module is intended to give an overview on solving word problems in geometry. It presents
 the different steps in problem solving as designed by Polya. It also contains sample word problems for
@@ -237,4 +237,170 @@ x + 3x + 3x + 5 &= 180 && \text{(Sum of the angles of a triangle is $180^{\circ}
 x &= 25
 \end{align*}
 Therefore, the measure of the smallest angle of the triangle is 25 degrees.
+\end{example}
+
+\begin{example}
+\Item One of the base angles of an isosceles triangle measures 15 degrees less than its vertex angle. Find the
+measure of its vertex angle.
+
+\textit{Geometry Concept}
+
+In an isosceles triangle, it has two congruent angles opposite the congruent sides. The angle opposite
+the base is called the vertex angle.
+
+\Solution
+
+\textit{Representation}
+
+\begin{align*}
+x&=\text{vertex angle}\\
+x-15 &= \text{base angle}
+\end{align*}
+
+\textit{Equation}
+
+\begin{align*}
+2(x - 15) + x &= 180 && \text{(Sum of the angles of a triangle is $180^{\circ}$.)}\\
+2x - 30 + x &= 180\\
+3x &= 210\\
+x &= 70
+\end{align*}
+Therefore, the measure of the vertex angle of the triangle is 70 degrees.
+\end{example}
+
+\begin{example}
+\Item Given the parallelogram on the right, find the value of $x$.
+
+\begin{tikzpicture}
+\node (trap1) [trapezium,trapezium left angle=81,trapezium right angle=99,minimum width=3cm, minimum height=1.5cm,draw] {};
+\node [below right] at (trap1.north west) {$(6x-15)^{\circ}$};
+\node [above right] at ([xshift=-10pt]trap1.south west) {$(4x+5)^{\circ}$};
+\end{tikzpicture}
+
+\textit{Geometry Concept}
+
+A parallelogram is a quadrilateral with two pairs of congruent and parallel sides. Its two pairs of opposite
+angles are congruent and the sum of the measures of any two consecutive angles is 180 degrees.
+
+\Solution
+
+\begin{align*}
+(4x + 5) + (6x - 15) &= 180 && \text{(The given angles are consecutive.)}\\
+10x - 10 &= 180\\
+10x &= 190\\
+x &= 19
+\end{align*}
+\end{example}
+
+\begin{example}
+\Item Given the rhombus, find the measure of the angles of the rhombus.
+
+\begin{tikzpicture}
+\node (trap1) [trapezium,trapezium left angle=45,trapezium right angle=135,minimum width=3cm, minimum height=1.5cm,draw] {};
+\node [below right] at ([xshift=-15pt]trap1.north east) {$(6x-15)^{\circ}$};
+\node [above left] at ([xshift=15pt]trap1.south west) {$(4x+5)^{\circ}$};
+\end{tikzpicture}
+
+\Solution
+
+\textit{Geometry Concept}
+
+A rhombus is a parallelogram with four congruent sides. Just like a parallelogram, its two pairs of
+opposite angles are congruent and the sum of the measures of any two consecutive angles is 180
+degrees.
+%
+\begin{align*}
+6x - 15 &= 4x + 5 && \text{(The given angles are opposite.)}\\
+2x &= 20\\
+x &= 10\\
+4x + 5 &= 45
+\end{align*}
+The given opposite angles have a measure of 45 degrees each while its other two angles
+measure $180 - 45 = 135$ degrees each.
+
+Therefore, the measures of the angles of the rhombus are $45\degree$, $45\degree$, $135\degree$, and $135\degree$.
+\end{example}
+\subsection*{PROBLEMS INVOLVING COMPLEMENTARY, SUPPLEMENTARY AND CONGRUENT ANGLES}
+\begin{example}
+\item Given two intersecting lines, find the value of $x$.
+
+\begin{tikzpicture}[scale=2,thick,>=stealth']
+\draw [->] (0,0) -- (22.5:1cm);
+\draw [->] (0,0) -- (22.5:-1cm);
+\draw [->] (0,0) -- (-22.5:1cm);
+\draw [->] (0,0) -- (-22.5:-1cm);
+\node [right] at ([xshift=5pt]0,0) {$(6x-15)\degree$};
+\node [left] at ([xshift=-5pt]0,0) {$(4x+5)\degree$};
+\end{tikzpicture}
+
+\Solution
+
+\textit{Geometry Concept}
+
+The two intersecting lines formed angles and the two given angles are “opposite” each other. They are
+called \Bold{vertical angles}. Vertical angles are congruent. 
+
+Since the given angles are vertical angle, they are congruent. Refer to Example 8.
+
+Therefore, the value of $x$ is 10.
+\end{example}
+
+\begin{example}
+\Item Given two intersecting lines, find the value of $x$.
+
+\begin{tikzpicture}[scale=2,thick,>=stealth']
+\draw [->] (0,0) -- (22.5:1cm);
+\draw [->] (0,0) -- (22.5:-1cm);
+\draw [->] (0,0) -- (-22.5:1cm);
+\draw [->] (0,0) -- (-22.5:-1cm);
+\node [right] at ([xshift=5pt]0,0) {$(6x-15)\degree$};
+\node [below] at ([yshift=-3pt]0,0) {$(4x+5)\degree$};
+\end{tikzpicture}
+
+\Solution
+
+\textit{Geometry Concept}
+
+The two intersecting lines formed angles and note that when the measures of the two given angles are
+added, we get the measure of a straight angle. These two angles are called linear pairs. The degree
+measures of a \Bold{linear pair} sum up to 180 degrees.
+
+Since the given angles are linear pairs, they sum up to $180\degree$. Refer to Example 7. %Fix reference here.
+
+Therefore, the value of $x$ is 19.
+\end{example}
+
+\begin{example}
+\Item The supplement of an angle is 20 degrees more than thrice the measure of the angle. What is the
+measure of the angle?
+
+\Solution
+
+\textit{Geometry Concept:} When the measures of two angles sum up to 180 degrees, they are called \Bold{supplementary angles}.
+\begin{align*}
+x &= \text{the given angle}\\
+180 - x &= \text{the measure of the supplement of the angle}\\
+180 - x &= 3x + 20\\
+160 &= 4x\\
+x &= 40
+\end{align*}
+Therefore, the measure of the angle is 40 degrees.
+\end{example}
+
+\begin{example}
+\Item The supplement of a certain angle is four times its complement. What is the measure of the angle?
+
+\Solution
+
+\textit{Geometry Concept:} When the measures of two angles sum up to 90 degrees, they are called \Bold{complementary angles}.
+\begin{align*}
+x &= \text{the given angle}\\
+180 - x &= \text{the measure of the supplement of the angle}\\
+90 - x &= \text{the measure of the complement of the angle}\\
+180 - x &= 4(90 - x)\\
+180 - x &= 360 - 4x\\
+3x &= 180\\
+x &= 60
+\end{align*}
+Therefore, the measure of the angle is 60 degrees.
 \end{example}
