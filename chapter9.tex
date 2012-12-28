@@ -320,7 +320,7 @@ measure $180 - 45 = 135$ degrees each.
 
 Therefore, the measures of the angles of the rhombus are $45\degree$, $45\degree$, $135\degree$, and $135\degree$.
 \end{example}
-\subsection*{PROBLEMS INVOLVING COMPLEMENTARY, SUPPLEMENTARY AND CONGRUENT ANGLES}
+\subsection*{PROBLEMS INVOLVING COMPLEMENTARY, SUPPLEMENTARY\\ AND CONGRUENT ANGLES}
 \begin{example}
 \item Given two intersecting lines, find the value of $x$.
 
@@ -404,3 +404,386 @@ x &= 60
 \end{align*}
 Therefore, the measure of the angle is 60 degrees.
 \end{example}
+\section*{EXERCISES}
+\begin{enumerate}
+\item If the width of a rectangle is 2 cm more than one-half its length and its perimeter is 40 cm, what are
+the dimensions of the rectangle?
+\item Each side of a triangle with sides 3 cm, 4 cm and 5 cm is extended the same amount. If the new
+perimeter of the triangle is twice its original perimeter, what is the length of each side of the new
+triangle?
+\item In a triangle, the ratio of the measures of its sides is 2:3:4 and the perimeter is 72 cm. Find the
+measures of the sides of the triangle.
+\item In a triangle, the ratio of the measures of its angles is 2:3:4. Find the measures of the angles of the
+triangle.
+\item If the numerical value of the area of a rectangle is twice the numerical value of its perimeter, and
+the length of one of its sides is 4.5, what are the lengths of its the other three sides?
+\item The measure of an angle is thrice the measure of its supplement. Find the measure of the
+supplement of the angle.
+\item What is the measure of an angle if the measure of its supplement is 10 degrees more than twice its
+complement?
+\item The sum of the measures of an acute angle and an obtuse angle is 1400. The sum of twice the
+supplement of the obtuse angle and three times the complement of the acute angle is 3400. Find the
+measures of the angles.
+\item When a beam of light is reflected from a
+smooth surface, the angle formed by the
+incoming beam with the surface is congruent
+to the angle formed by the reflected beam
+and the surface.
+Given the following
+information, the measure of $\angle ABC$ is 90, the
+measure of $\angle BCD$ is 75, and the beam of
+light makes an angle of $35\degree$ with line segment
+$AR$. At what angle does the beam reflect
+from line segment $AB$ the second time. You
+can indicate computed measures on the
+figure.
+
+$m\angle EAF = \makebox[1.5in]{\hrulefill}$
+
+\item The Leaning Tower of Pisa in Italy makes an angle with the ground of
+about $84\degree$ on one side the figure and is denoted by $\degree$. Find the measure of
+the other angle that the tower makes with the ground.
+\end{enumerate}
+\section*{ADDITIONAL PROBLEMS}
+\begin{enumerate}
+\item The design of the patio of Mr. Archangel is shown at the right. If the measure of $\angle1$ is three times as large as the measure of $\angle 2$, calculate the measure of $\angle 1$.
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\node (A) [thick,trapezium,trapezium left angle=90,trapezium right angle =45,rotate=90,draw,minimum width=1cm,minimum height=2cm] {};
+\draw ([yshift=1pt,xshift=-0.5pt]A.south west) rectangle ++(-10pt,10pt);
+\draw ([yshift=1pt]A.north west) rectangle ++(10pt,10pt);
+\node at ([xshift=-10pt,yshift=2.2cm]A.south east) {2};
+\node at ([xshift=10pt,yshift=-10pt]A.north east) {1};
+\end{tikzpicture}
+\end{center}
+\Solution
+
+We have here a convex quadrilateral. The some of the measures of
+the interior angles of a quadrilateral is 360. Two angles are already
+right angles, hence, the sum of their measures is 180. The sum of the
+measures of $\angle 1$ and $\angle 2$ is 180.
+
+Setting up an equation, we have the following solution:
+Let $x$ be the measure of $\angle 2$. The measure of $\angle 1$ is $3x$ and $x+3x=180$
+will be our working equation. Simplifying we have $4x=180$ and simplifying further $x = 45$. Therefore the measure of $\angle 1$ is 135.
+
+\item At night time, it is usually warmer during summer at the urban regions that at the rural regions. Part
+of the reasons to this is the amount of heat absorbed by the establishments during the day which
+they will emit at night time. The narrow city streets and tall building trap and absorbs the sun's heat
+during the day. When sunlight shines on flat land, some of the light scatters back into the sky. In
+the city, light scattered by the ground or building often hits another building. Instead of escaping
+into the atmosphere the heat is absorbed. The more heat is absorbed the greater is the heat
+released at night time. The reflection of light is governed by the law of reflection which states that
+the angle of incidence is equal to the angle of reflection. The angle of incidence is the angle formed
+by the incident ray and the line perpendicular to the surface called the normal line. On the other
+hand, the angle of reflection is the angle formed by the reflected ray and the normal line. The figure
+below shows two parallel buildings on the opposite sides of the road. $\ray{AB}$ is the incident line and is reflected along the vertical side of the building. It is reflected as $\ray{BC}$, then reflected again as $\ray{CD}$ and finally as $\ray{DE}$. If the measure of $\angle ABG$ is 35, what is the measure of $\angle FDE$?
+\begin{center}
+\begin{tikzpicture}[>=stealth']
+\newcommand{\Value}{\pgfmathparse{atan(2)}\pgfmathresult}
+\node (A1) [pattern=bricks,minimum width=0.5cm,minimum height=3cm,draw] {};
+\node (A2) at ([xshift=-0.775cm,yshift=-0.5cm]A1.east) [pattern=bricks,minimum width=0.5cm,minimum height=2cm,draw] {};
+\node (A3) at ([xshift=-1.275cm,yshift=-1cm]A1.east) [pattern=bricks,minimum width=0.5cm,minimum height=1cm,draw] {};
+\begin{scope}[xshift=3cm]
+\node (B1) [pattern=bricks,minimum width=0.5cm,minimum height=3cm,draw] {};
+\node (B2) at ([xshift=0.25cm,yshift=-0.5cm]B1.east) [pattern=bricks,minimum width=0.5cm,minimum height=2cm,draw] {};
+\node (B3) at ([xshift=0.75cm,yshift=-1cm]B1.east) [pattern=bricks,minimum width=0.5cm,minimum height=1cm,draw] {};
+\end{scope}
+\coordinate (B) at ([yshift=-10pt]B1.north west) {};
+\coordinate (C) at ([xshift=20pt]A1.south east) {};
+\draw [->] (B) -- (C);
+\coordinate (D) at ([yshift=10pt]A1.south east);
+\draw [->] (C) -- (D);
+\coordinate (E) at ([yshift=30pt]B1.north west);
+\draw [shorten >=-20pt,->] (D) -- (E) node [below right] {$E$};
+\draw [->] (D) -- +(0,4cm) node [above] {$F$};
+\draw (A1.south east) -- (B1.south west);
+\draw [->] (B1.south west) -- +(0,4.5cm) node [above] {$G$};
+\coordinate (A) at ($(B)!-2cm!96.57:(C)$);
+\draw [->] (A) -- (B);
+\node [left] at (A) {$A$};
+\node [left] at ([xshift=-2pt,yshift=-2pt]B) {$B$};
+\node [below] at (C) {$C$};
+\node [right] at ([yshift=3pt]D) {$D$};
+\useasboundingbox{(0,3cm)};
+\end{tikzpicture}
+\end{center}
+\Solution
+
+We know that the measure of $\angle ABG$ is 35. We are tasked to find the measure of $\angle FDE$. We
+also know that the angle of incidence is equal to the angle of reflection. To solve the problem, we
+need to redraw the figure and in each reflection process we draw the normal line. We will also use
+the theorem complements of congruent angles are congruent. (The normal line is perpendicular to
+the surface. The angle of incidence and the angle formed by the incident ray and the surface are
+complementary). For the purpose of clearer solution, we will enlarge the figure and remove the
+buildings. The broken arrows are the normal line.
+\begin{center}
+\begin{tikzpicture}[>=stealth']
+\newcommand{\Value}{\pgfmathparse{atan(2)}\pgfmathresult}
+\node (A1) [minimum width=0.5cm,minimum height=3cm] {};
+\begin{scope}[xshift=3cm]
+\node (B1) [minimum width=0.5cm,minimum height=3cm] {};
+\end{scope}
+\coordinate (B) at ([yshift=-10pt]B1.north west) {};
+\coordinate (C) at ([xshift=20pt]A1.south east) {};
+\draw [->] (B) -- (C);
+\coordinate (D) at ([yshift=10pt]A1.south east);
+\draw [->] (C) -- (D);
+\coordinate (E) at ([yshift=30pt]B1.north west);
+\draw [shorten >=-20pt,->] (D) -- (E) node [below right] {$E$};
+\draw [->] (D) -- +(0,4cm) node [above] {$F$};
+\draw (A1.south east) -- (B1.south west);
+\draw [->] (B1.south west) -- +(0,4.5cm) node [above] {$G$};
+\coordinate (A) at ($(B)!-2cm!96.57:(C)$);
+\draw [->] (A) -- (B);
+\node [left] at (A) {$A$};
+\node [right] at ([xshift=-2pt,yshift=-2pt]B) {$B$};
+\node [below] at (C) {$C$};
+\node [right] at ([yshift=3pt]D) {$D$};
+\draw [dashed,->] (D) -- +(2cm,0) node [right] {$J$};
+\draw [dashed,->] (C) -- +(0,2cm) node [above] {$I$};
+\draw [dashed,->] (B) -- +(-2cm,0) node [left] {$H$};
+\node at ([xshift=-5pt]B1.south east) {$K$};
+\draw ([xshift=-15pt]B1.south east) rectangle +(-5pt,5pt);
+\useasboundingbox{(0,3cm)};
+\end{tikzpicture}
+\end{center}
+The measure of $\angle ABG$ is 35. Therefore its complement ($\angle ABH$) has a measure of 55.
+Complementary angles are pair of angles whose some of their measures is equal to 90. $\angle ABH$ is the angle of
+incidence while $\angle HBC$ is the angle of reflection. By the
+law of reflection these angles ($\angle ABH$ and $\angle HBC$) have equal measure. The normal ray ($\ray{BH}$) is parallel to the surface of the road (since the road and the side of the
+building are perpendicular and the normal line is
+perpendicular to the side of the building. Lines
+perpendicular to the same line are parallel). $\Segment{CB}$ is the transversal and $\angle HBC$ and $\angle BCK$ are alternate interior angles. (Alternate interior angles of parallel lines cut by
+a transversal are congruent). Therefore the measure of
+$\angle BCK$ is 55. The measure of $\angle BCI$ (angle of incidence)
+is 35 since $\angle BCK$ and $\angle BCI$ are complementary.
+
+Using the same processes, the measure of $\angle BCI$ is 35, the measure of $\angle ICD$ is 35, $\angle CDJ$ is 55, $\angle JDE$ is also 55 and finally the measure of $\angle FDE$ is 35.
+
+\item Kaitlin and Henry are participating in a treasure hunt. They are on the same straight path,
+walking toward each other. When Kaitlin reaches the Big Oak, she will turn $115\degree$ onto another
+path that leads to the treasure. At what angle will Henry turn when he reaches the Big Oak to
+continue on to the treasure?
+
+\begin{center}
+\begin{tikzpicture}[>=stealth']
+\node (cloud) [cloud,minimum width=2cm,minimum height=1cm,cloud ignores aspect,draw] {Big Oak};
+\draw [->] (cloud) -- +(0.4\linewidth,0) node [right] (B) {};
+\draw [->] (cloud) -- +(-0.4\linewidth,0) node [left] (C) {};
+\node (D) at ($(cloud)!0.3\linewidth!-115:(C)$) [cloud,minimum width=2cm,minimum height=1cm,cloud ignores aspect,draw] {Treasure};
+\draw (cloud) -- (D);
+\node [above] at (B) {
+\includegraphics[width=0.5in]{henry}
+};
+\node [above] at (C) {
+\includegraphics[width=0.25in]{kaitlin}
+};
+\end{tikzpicture}
+\end{center}
+
+\Solution
+
+To solve the problem, we need to draw a diagram that illustrates the problem. Below is
+the diagram that illustrates the problem. We need to assume that Big Oak, Kaitlin and Henry are
+on the same line. The angle formed by the rays joining Kaitlin, Big Oak and treasure has a
+measure equal to $115\degree$. Therefore we need to get the measure of the supplement of that angle
+since it's the angle where Henry will turn if he will reach Big Oak. Hence, Henry should turn at
+$65\degree$-angle to continue to the treasure.
+\end{enumerate}
+\section*{SUGGESTED ACTIVITY}\pdfmargincomment[author={Joseph S. Tabadero, Jr.},]{Was this copied verbatim from the source? If so, then this has to be paraphrased/re-written.}
+This is adopted from Sourcebook on Practical Work for Teacher Trainers: High School Mathematics I and
+II Volume 2.
+\subsection*{Exploring the Geometry in a Paper Cup}
+\subsubsection*{Objectives}
+\begin{enumerate}
+\item To apply geometric concepts and principles
+\item To justify or prove geometric relationships
+\end{enumerate}
+\subsubsection*{Materials}
+\begin{enumerate}
+\item 5 pieces of coupon bond
+\item 2 square papers
+\end{enumerate}
+\subsubsection*{Instructional Procedures}
+\textit{Introductory Activity}
+\begin{enumerate}
+\item \textit{Constructing perpendicular lines by paper folding}
+
+Get a piece of paper. Fold the paper to show two (2) creases perpendicular to each other. Call
+the fist crease $\Segment{AB}$ and the second crease $\Segment{CD}$. Explain why you think the creases you made are perpendicular.
+\item \textit{Constructing perpendicular bisector by paper folding}
+
+Get another piece of paper. Make a crease and call it $\Segment{AB}$. Make another crease $\Segment{CD}$ that bisects $\Segment{AB}$. How do you know that with your procedure the second crease bisects the first? Does the
+first crease bisect the second?
+
+\item \textit{Constructing bisector of angles by paper folding}
+
+Get another piece of paper. Make a crease to make an angle with one side on the lower edge of
+the paper. Call this angle $\angle BAC$. Did you make an acute, right or obtuse angle? Show how you
+will bisect $\angle BAC$ by folding. Call this bisector $\Segment{AD}$.
+\end{enumerate}
+\textit{Lesson Proper}
+\begin{enumerate}
+\item \textit{Making a cup}
+
+Let us do an activity on paper folding. Use the square paper and follow the procedure in the
+activity sheet that will be distributed.
+\item \textit{Post-Activity Discussion}
+
+Let us examine the mathematics in the activity you did. Let us discuss your answers to the
+questions in the activity sheet.
+	\begin{enumerate}
+	\item Which paper folding procedure in our previous activity was used in steps 1, 2 and 3?
+	\item Let us fill the table with the names of the polygons found in the figure.
+	\item Identify some figures which are symmetrical and give the line of symmetry for each (you can
+	omit this since it's not included in the topics to be discussed)
+	\item Now we consider the congruent angles and congruent segments that resulted from the
+	folding. Use the upper triangular half of the figure only.
+	\item List down other possible problems that can be formulated based on the resulting figure in
+	the activity
+	\end{enumerate}
+\end{enumerate}
+\textit{Assessment}
+
+Give a piece of square paper. Call the diagonal fold $\Segment{AB}$.
+\begin{enumerate}
+\item Fold the paper to show an angle of measure $67.5\degree$ with vertex at A.
+\item Using the same paper used in number 1, fold the paper to show 2 creases perpendicular to $\Segment{AB}$.
+\item Trace the following figures. Name the points as needed and indicate the measure of the angles.
+	\begin{enumerate}
+	\item Two triangles of different sizes but of the same set of angle measure.
+	\item Two triangles that are congruent. Explain why they are congruent.
+	\item A trapezoid. Find the measure of its angles and explain why you think it is a trapezoid.
+	\end{enumerate}
+	If the above questions (assessment of this paper folding activity) are still too high for
+	your students, then you can use the following questions instead.
+	\begin{enumerate}
+	\item What do the creases represent?
+	\item Name congruent segments.
+	\item Name congruent angles.
+	\item Name acute, right and obtuse angles.
+	\item Name complementary, supplementary and vertical angles.
+	\item Name an angle bisector and the angle it bisects
+	\item Name segments which are perpendicular to each other.
+	\item Name segments which are parallel.
+	\end{enumerate}
+\end{enumerate}
+\subsubsection*{Making a Paper Cup}
+\begin{enumerate}[A.]
+\item To make a cup, fold the square paper by following the procedure below.
+\begin{center}
+\begin{tikzpicture}[thick,>=stealth']
+\filldraw [gray, draw=black, opacity=0.5] (0,0) -- (2,2) -- (0,2) -- cycle;
+\draw [dashed] (0,0) -- (2,0) -- (2,2);
+\path (0,0) -- (2,0) node [pos=0.5,below] {1};
+\draw [->] (2,0) arc (0:90:2cm);
+\begin{scope}[xshift=2.25cm]
+\draw[<->] (0,1) -- ++(7.5pt,-7.5pt) --++(10pt,10pt) --+(7.5pt,-7.5pt);
+\node [below=5pt] at ($(0,1)+(12.5pt,0)$) {rotate};
+\end{scope}
+\begin{scope}[xshift=3.25cm,rotate=-45]
+\draw (0,0) -- (2,2) -- (0,2) -- cycle;
+\draw [dashed] (0.83,2) -- (0,0);
+\path (90:0.5cm) edge [bend left] (45:0.7cm);
+\path [->] (45:0.7cm) edge [bend right] (85:0.9cm);
+\path (0,0) -- (2,2) node [midway,below] {2};
+\end{scope}
+\begin{scope}[xshift=6.5cm,rotate=-45]
+\draw (0,1.17) -- (0,2) -- (0.83,2) -- cycle;
+\draw [dashed] (0,0) -- (0,1.17) -- (45:1.17) -- cycle;
+\fill [fill=gray,opacity=.5] (0,1.17) -- (0.83,2) -- (45:1.17) -- cycle;
+\draw (0.83,2) -- (2,2) -- (45:1.17) -- cycle;
+\path (0,0) -- (2,2) node [midway,below] {3};
+\end{scope}
+\begin{scope}[shift={(0,-3)},rotate=-45]
+\draw (0,1.17) -- (0,2) -- (0.83,2) -- cycle;
+\filldraw [fill=gray,opacity=.5] (0,1.17) -- (0.83,2) -- (45:1.17) -- cycle;
+\draw [dashed] (0.83,2) -- (2,2) -- (45:1.66) -- cycle;
+\path (0,0) -- (2,2) node [midway,below] {4};
+\draw (45:1.17) -- (45:1.66);
+\fill [fill=gray,opacity=.7] (45:1.66) -- (0,1.17) -- (0.83,2) -- cycle;
+\end{scope}
+\begin{scope}[shift={(2.5,-3)},rotate=-45]
+\draw (0,1.17) -- (0,2) -- (0.83,2) -- cycle;
+\filldraw [fill=gray,opacity=.5] (0,1.17) -- (0.83,2) -- (45:1.17) -- cycle;
+\path (0,0) -- (2,2) node [midway,below] {5};
+\draw (45:1.17) -- (45:1.66);
+\filldraw [fill=gray,opacity=.7] (45:1.66) -- (0,1.17) -- (0.83,2) -- cycle;
+\filldraw [fill=white] (0,1.17) -- ++(0:.83) --++(90:.83) -- cycle;
+\end{scope}
+\begin{scope}[shift={(5.25,-2.25)}]
+\draw [decoration={coil,aspect=1,segment length=3mm,amplitude=1mm},decorate,->] (0,0) -- (0.8cm,0);
+\node at (0.4cm,0) [below=5	pt,align=center] {turn\\ over};
+\end{scope}
+\begin{scope}[shift={(6,-3)}]
+\begin{scope}[rotate=-45]
+\filldraw [fill=gray,opacity=.5] (0,1.17) -- (0.83,2) -- (45:1.17) -- cycle;
+\path (0,0) -- (2,2) node [midway,below] {6};
+\draw (45:1.17) -- (45:1.66);
+\filldraw [fill=gray,opacity=.7] (45:1.66) -- (0,1.17) -- (0.83,2) -- cycle;
+\filldraw [fill=white] (0,1.17) -- ++(0:.83) --++(90:.83) -- cycle;
+\end{scope}[rotate=45]
+\filldraw [fill=white] ($([xshift=1cm,yshift=-.7cm]0,1.17)!.5!([xshift=1cm,yshift=-.7cm]0.83,2)$) ellipse (.59 and .2);
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\item We study some mathematics related to the figures. carefully unfold the final figure. Label the points as shown.
+
+\begin{center}
+\begin{tikzpicture}[scale=2]
+\coordinate (A) at (0,0);
+\coordinate (B) at (45:2);
+\coordinate (C) at (2.83,0);
+\coordinate (K) at (-45:2);
+\coordinate (E) at (45:1.17);
+\coordinate (D) at ($(45:2)+(-45:.83)$);
+\coordinate (F) at (1.17,0);
+\coordinate (G) at (1.66,0);
+\coordinate (H) at (-45:1.17);
+\coordinate (J) at ($(-45:2)+(45:.83)$);
+\coordinate (L) at ($(E)!.5!(F)$);
+\coordinate (M) at ($(F)!.5!(H)$);
+
+\draw (A) -- (B) -- (C) -- (K) -- cycle;
+\draw (A) -- (C);
+\draw [dashed] (E) -- (D) -- (G) -- (J) -- (H) -- (F) -- cycle;
+\draw [dashed] (A) -- (D);
+\draw [dashed] (A) -- (J);
+
+\node at (A) [left] {$A$};
+\node at (B) [above] {$B$};
+\node at (C) [right] {$C$};
+\node at (K) [below] {$K$};
+\node at (E) [left] {$E$};
+\node at (D) [right] {$D$};
+\node at (H) [left] {$H$};
+\node at (J) [right] {$J$};
+\node at ([yshift=-2pt]L) [right] {$L$};
+\node at ([yshift=2pt]M) [right] {$M$};
+\node at (F) [above left] {$F$};
+\node at (G) [above right] {$G$};
+\end{tikzpicture}
+\end{center}
+
+Answer the following questions. Discuss your answers with your group.
+
+	\begin{enumerate}
+	\item Study steps 1 to 3. Which folding in our introductory paper folding procedures correspond to each step? 
+	\item What polygons do you recognize? Name some of them and classify them as indicated in the following table.
+	\begin{center}
+	\begin{tabular}{lcc}
+	\hline \hline
+	Polygons & Some Convex Polygons & Some Concave Polygons\\
+	\hline 
+	Triangle & & \\
+	Quadrilateral & & \\
+	Pentagon & & \\
+	Hexagon & & \\
+	\hline 
+	\end{tabular}
+	\end{center}
+	\item Study the symmetrical figures. Can you identify symmetrical figures? Name some and identify the line of symmetry for each.
+	\item Name all the line segments that are congruent by superimposing. Name also the congruent angles.
+	\end{enumerate}
+\end{enumerate}
