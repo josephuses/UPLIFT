@@ -1,4 +1,4 @@
-\documentclass[svgnames,a4paper]{report}
+\documentclass[svgnames,a4paper]{book}
 
 \usepackage[inner=1.5in,outer=1in,top=1in,bottom=1in]{geometry}
 
@@ -11,7 +11,8 @@
 % {Linux Libertine}
 % {Gentium Book Basic}
 %\usepackage{pst-pdf}
-\usepackage{graphicx}
+%\usepackage{graphicx}
+\usepackage[section]{placeins}
 \usepackage{cprotect}
 \usepackage{picins}
 %\usepackage{parpic}
@@ -22,7 +23,9 @@
 %\usepackage{caption}
 %\usepackage{titlesec}
 \newcommand{\Answers}{\textbf{Answers}}
+\newcommand{\Segment}[1]{\overline{#1}}
 \newcommand{\Problems}{\textbf{Problems}}
+\newcommand{\ray}[1]{\overrightarrow{#1}}
 %\usepackage{tabularx}
 %\newenvironment{\begin{answer}}{\begin{enumerate}}{\end{enumerate}}
 %\renewcommand\thepart{\Alph{part}}
@@ -51,7 +54,9 @@
 \usepackage{amssymb}
 %\usepackage[charter]{mathdesign}
 \usepackage{libertine}
-\usepackage[frenchmath,italic]{mathastext}
+%\usepackage[frenchmath,italic]{mathastext}
+%\usepackage{newtxtext}
+\usepackage{newtxmath}
 %\usepackage{ntxmath}
 %\usepackage{newtx}
 %\usepackage{fontspec}
@@ -75,39 +80,9 @@
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \newcolumntype{Y}{>{\centering\arraybackslash}p{0.15\linewidth}}
 \usepackage{tikz}
-\usetikzlibrary{shapes.geometric,shapes.misc,calc,positioning,backgrounds,fit,arrows,decorations,decorations.pathmorphing,decorations.pathreplacing}
+\usetikzlibrary{shapes.symbols,patterns,shapes.geometric,shapes.misc,calc,positioning,backgrounds,fit,arrows,decorations,decorations.pathmorphing,decorations.pathreplacing}
 \usepackage{smartdiagram}
 %\usetikzlibrary{calc,arrows}
-\tikzset{
-excursus arrow/.style={%
-line width=2pt,
-draw=gray!40,
-rounded corners=2ex,
-},
-excursus head/.style={
-fill=white,
-font=\bfseries\sffamily,
-text=gray!80,
-anchor=base west,
-},
-}
-\mdfdefinestyle{digressionarrows}{%
-leftmargin=10pt,%
-rightmargin=10pt,%
-linecolor=gray,linewidth=2pt,%
-frametitlerule=true,%
-frametitlebackgroundcolor=gray!20,
-innertopmargin=\topskip,
-frametitle=Think back}
-
-\mdfdefinestyle{fact}{%
-leftmargin=10pt,%
-rightmargin=10pt,%
-linecolor=orange,linewidth=2pt,%
-frametitlerule=true,%
-frametitlebackgroundcolor=orange!20,
-innertopmargin=\topskip,
-frametitle=Fact}
 
 \pgfdeclarelayer{background layer}
 \pgfdeclarelayer{foreground layer}
@@ -123,7 +98,7 @@ frametitle=Fact}
 \DeclareCaptionLabelSeparator*{newlinerule}{\par\kern2pt\rule{2in}{1pt}\par\kern1pt}
 
 \captionsetup{
-  font=small,
+  font={footnotesize,singlespacing},
   format=plain,
   labelformat=simple,
   labelsep=newlinerule,
@@ -133,6 +108,11 @@ frametitle=Fact}
 
 \usepackage[hang,raggedright]{subfigure}
 \usepackage{enumerate}
+\newenvironment{myenumerate}{%
+  \edef\backupindent{\the\parindent}%
+  \enumerate%
+  \setlength{\parindent}{\backupindent}%
+}{\endenumerate}
 \newcommand{\answerline}[1]{
 \begin{tabularx}{0.2\linewidth}{p{0.5in}>{\raggedright\arraybackslash}X}
 #1 & \makebox[0.5in]{\hrulefill}\\
@@ -147,8 +127,11 @@ roundcorner=10pt,
 ]{myshadowbox}
 \newenvironment{property}{\begin{myshadowbox}}{\end{myshadowbox}}
 
-\newenvironment{thinkback}{\begin{mdframed}[style=digressionarrows]}{\end{mdframed}}
-\newenvironment{fact}{\begin{mdframed}[style=fact]}{\end{mdframed}}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.7}
+
+%\newenvironment{thinkback}{\begin{mdframed}[style=digressionarrows]}{\end{mdframed}}
+%\newenvironment{fact}{\begin{mdframed}[style=fact]}{\end{mdframed}}
 \mdfsetup{skipabove=\topskip,skipbelow=\topskip}
 \usepackage{etoolbox}
 \newcommand{\Line}{\makebox[0.5in]{\hrulefill}}
@@ -158,6 +141,8 @@ roundcorner=10pt,
 \usepackage{makerobust}
 \MakeRobustCommand{\textpeso}
 \usepackage{colortbl}
+\def\Md{\ensuremath{\mathrm{Md}}}
+\def\Mo{\ensuremath{\mathrm{Mo}}}
 \def\T{\,\mathrm{t}}
 \def\dkm{\,\mathrm{dkm}}
 \def\gal{\,\mathrm{gal}}
@@ -178,7 +163,7 @@ roundcorner=10pt,
 \def\C{\ensuremath{\,\mathrm{C}}}
 \def\F{\ensuremath{\,\mathrm{F}}}
 \def\and{\,\text{and}\,}
-\def\degree{\ensuremath{\,\mathrm{^{\circ}}}}
+\def\degree{\ensuremath{\mathrm{^{\circ}}}}
 \usepackage{multicol}
 \newcommand{\yourown}{Try these practice problems on your own.}
 \newcommand{\Underline}[1]{\underline{#1}}
@@ -187,23 +172,21 @@ roundcorner=10pt,
 \usepackage{fancyhdr}
 %\fancyhead{}%
 \fancyfoot{}%
-\fancyfoot[RE,LO]{MATHEMATICS MODULE || Page \textbf{\thepage} of \textbf{\pageref{LastPage}}}
+\fancyfoot[RE,LO]{\footnotesize \color{blue!50!black} MATHEMATICS MODULE || Page \textbf{\thepage} of \textbf{\pageref{LastPage}}}
 %\fancyhead[RE,LO]{\thechapter}
-\fancyhead[RO,LE]{\textcopyright{} UPLIFT}
-%\newcounter{cexample}
-\newenvironment{example}{%
-\par\vspace*{\topskip}\noindent
-\tikz {\node (A) [baseline={(current bounding box.east)},rectangle,minimum height=5pt,minimum width=5pt,fill=blue!50!white] {};
-\draw [color=blue!50!white] ([xshift=1pt]A.east) -- +(2in,0) node [pos=0,above=0.5\topskip,text=blue!50!white,align=left] {\textbf{Example}};
-}%
-\begin{enumerate}
-}{\end{enumerate}
-\hfill \tikz {\node (A) [rectangle,minimum height=5pt,minimum width=5pt,fill=blue!50!white] {};
-\draw [color=blue!50!white] (A) -- +(-2in,0);
-}
-}
+\fancyhead[RO,LE]{\footnotesize \color{blue!50!black} \textcopyright{} UPLIFT}
+\newcounter{example}[chapter]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip\noindent%
+    \tikz {\node (A) [baseline={(current bounding box.west)},rectangle,text height=10pt,text width=0.75\linewidth,inner sep=1pt, shade,shading=rectangle,inner color=yellow,left color=blue!30,right color=white,align=left] {\textbf{\sffamily Example~\thechapter.\theexample #1}};
+    }
+    \begin{myenumerate}
+    }{\end{myenumerate}\par 
+    \hfill \tikz {\node (A) [rectangle,minimum height=5pt,minimum width=5pt,fill=blue!50!white] {};
+    \draw [color=blue!20!white] (A.south east) -- +(-0.5\linewidth,0);
+    }
+    \par\medskip}
 \usepackage{paralist}
-\usepackage[backend=bibtex]{biblatex}
+\usepackage[style=authoryear,backend=biber,]{biblatex}
 \usepackage{pdfcomment}
 \addbibresource{upliftbib.bib}
 \DefineBibliographyStrings{english}{
@@ -228,9 +211,28 @@ bibliography={REFERENCES}
 \definecolor{outer}{HTML}{424296}
 \definecolor{inner}{HTML}{D8D8FF}
 
+% Definitions for tally
+% http://compgroups.net/comp.text.tex/tally-symbols-in-latex/1907031
+\usepackage[misc]{ifsym}
+\usepackage{ifthen}
+
+%% Define \tally{#1} command where #1 is a number.  The macro then
+%% typesets the appropriate number of tally marks from the ifsym
+%% package.  Also requires the ifthen package, documented in Lamport.
+\newcounter{strokecount}
+\newcommand{\tally}[1]{\setcounter{strokecount}{#1}%
+  \whiledo{\value{strokecount}>5}%
+  {\addtocounter{strokecount}{-5}\textit{\small\textcolor{blue}{\StrokeFive}}}%
+  \ifthenelse{\value{strokecount}=5}{\textit{\small\textcolor{blue}{\StrokeFive}}}{}%
+  \ifthenelse{\value{strokecount}=4}{\textit{\small\textcolor{blue}{\StrokeFour}}}{}%
+  \ifthenelse{\value{strokecount}=3}{\textit{\small\textcolor{blue}{\StrokeThree}}}{}%
+  \ifthenelse{\value{strokecount}=2}{\textit{\small\textcolor{blue}{\StrokeTwo}}}{}%
+  \ifthenelse{\value{strokecount}=1}{\textit{\small\textcolor{blue}{\StrokeOne}}}{}}
+
+
 \newcommand*{\rotatedbox}[1]{
 \tikz \node [rotate=180] {#1
-  };
+	};
 }
 %%%%%%%%%% HERE COMES THE PATCH %%%%%%%%%%
 \usepackage{etoolbox}
@@ -247,23 +249,87 @@ bibliography={REFERENCES}
 
 %\usepackage{hf-tikz}
 % put color to \boxed math command
-\newcommand*{\boxcolor}{orange}
+\newcommand*{\boxcolor}{blue!40}
 \makeatletter
 \renewcommand{\boxed}[1]{\textcolor{\boxcolor}{%
-\tikz[baseline={([yshift=-1.5ex]current bounding box.center)}] \node [rectangle, minimum width=1ex,rounded corners,draw] {\normalcolor\m@th$\displaystyle#1$};}}
+\tikz[baseline={([yshift=-.75ex]current bounding box.center)}] \node [rectangle, minimum width=1ex,rounded corners,draw] {\normalcolor\m@th$\displaystyle#1$};}}
 \makeatother
 \newcommand{\Item}{\item}
-\mdfdefinestyle{theoremstyle}{shadow=true,
-				  shadowsize=5pt,
-          linewidth=5pt,
-          frametitlerule=true,
-          roundcorner=10pt,
-          innertopmargin=\topskip}
-\newcommand{\thm}[1]{#1\index{#1}}
-\mdtheorem[style=theoremstyle]{definition}{Definition}
-\BeforeBeginEnvironment{definition}{\vspace*{\topskip}}
-\AfterEndEnvironment{definition}{\vspace*{\topskip}}
+%\mdfdefinestyle{theoremstyle}{shadow=true,
+%				  shadowsize=5pt,
+%          linewidth=5pt,
+%          frametitlerule=true,
+%          roundcorner=10pt,
+%          innertopmargin=\topskip}
+%\newcommand{\thm}[1]{#1\index{#1}}
+%\mdtheorem[style=theoremstyle]{definition}{Definition}
+%\BeforeBeginEnvironment{definition}{\vspace*{\topskip}}
+%\AfterEndEnvironment{definition}{\vspace*{\topskip}}
+\newcounter{theo}[chapter]
+\newenvironment{definition}[1][]{%
+\refstepcounter{theo}%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20]
+{\strut Definition~\thechapter.\thetheo};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20]
+{\strut Definition~\thechapter.\thetheo:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+linewidth=2pt,topline=true,
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
 
+\newcounter{think}[chapter]
+\newenvironment{thinkback}[1][]{%
+\refstepcounter{think}%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20]
+{\strut Think Back~\thechapter.\thethink};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20]
+{\strut Think Back~\thechapter.\thethink:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+linewidth=2pt,topline=true,
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+\newcounter{Fact}[chapter]
+\newenvironment{fact}[1][]{%
+\refstepcounter{Fact}%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20]
+{\strut Fact!~\thechapter.\theFact};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20]
+{\strut Fact!~\thechapter.\theFact:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+linewidth=2pt,topline=true,
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
 %\usepackage[explicit]{titlesec}
 %\newcommand*\chapterlabel{}
 %\titleformat{\chapter}
@@ -284,61 +350,129 @@ bibliography={REFERENCES}
 %   \end{tikzpicture}
 %  }
 %\titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+\usepackage{pgf-pie}
+\usepackage{epigraph}
 
+\renewcommand\epigraphflush{flushright}
+\renewcommand\epigraphsize{\normalsize}
+\setlength\epigraphwidth{0.7\textwidth}
+
+\definecolor{titlepagecolor}{cmyk}{1,.60,0,.40}
+
+\DeclareFixedFont{\titlefont}{T1}{ppl}{b}{it}{0.5in}
+
+\makeatletter                       
+\def\printauthor{%                  
+    {\large \@author}}              
+\makeatother
+\author{%
+\textbf{Module Writers:}\\
+    Jonellyn S. Albano (IRC)\\
+    Daryl R. Alegarbes (SMC)\\
+    Ronnie R. Calanno (IRC)\\
+    Leo Andrei A. Crisologo (MC)\\
+    Maricel B. Dumlao (CVC)\\
+    Rommel O. Gregorio (CARC)\\
+    Rosalinda O. Luwang (CVC)\\
+    Mary Gay Antonette G. Magpantay (MC)\\
+    Ronnalee I. Navasca-Orteza (IRC)\\
+    Flordelino C. Orteza, Jr. (IRC)\\
+    Herminigilda C. Salac (MC)\\
+    Fortunato A. Tacuboy III (MC)\\[24pt]
+\textbf{Module Editors:}\\
+	Mark John V. Ayaay (MC)\\
+	Leo Andrei A. Crisologo (MC)\\
+	Jose Manresa D. Español IV (MC)\\
+	Kiel F. Granada (MC)\\
+	Mario Danilo R. Llanura (MC)\\
+	Mary Gay Antonette G. Magpantay (MC)\\
+	Herminigilda C. Salac (MC)\\
+	Joyce Marianne B. Simpas (MC)\\
+	Fortunato A. Tacuboy III (MC)\\
+	Joseph S. Tabadero, Jr. (CARC)
+    }
+
+% The following code is borrowed from: http://tex.stackexchange.com/a/86310/10898
+
+\newcommand\titlepagedecoration{%
+\begin{tikzpicture}[remember picture,overlay,shorten >= -10pt]
+
+\coordinate (aux1) at ([yshift=-15pt]current page.north east);
+\coordinate (aux2) at ([yshift=-410pt]current page.north east);
+\coordinate (aux3) at ([xshift=-4.5cm]current page.north east);
+\coordinate (aux4) at ([yshift=-150pt]current page.north east);
+
+\begin{scope}[titlepagecolor!40,line width=12pt,rounded corners=12pt]
+\draw
+  (aux1) -- coordinate (a)
+  ++(225:5) --
+  ++(-45:5.1) coordinate (b);
+\draw[shorten <= -10pt]
+  (aux3) --
+  (a) --
+  (aux1);
+\draw[opacity=0.6,titlepagecolor,shorten <= -10pt]
+  (b) --
+  ++(225:2.2) --
+  ++(-45:2.2);
+\end{scope}
+\draw[titlepagecolor,line width=8pt,rounded corners=8pt,shorten <= -10pt]
+  (aux4) --
+  ++(225:0.8) --
+  ++(-45:0.8);
+\begin{scope}[titlepagecolor!70,line width=6pt,rounded corners=8pt]
+\draw[shorten <= -10pt]
+  (aux2) --
+  ++(225:3) coordinate[pos=0.45] (c) --
+  ++(-45:3.1);
+\draw
+  (aux2) --
+  (c) --
+  ++(135:2.5) --
+  ++(45:2.5) --
+  ++(-45:2.5) coordinate[pos=0.3] (d);   
+\draw 
+  (d) -- +(45:1);
+\end{scope}
+%\begin{scope}
+%\node at (current page.south) {\rule[5pt]{\linewidth}{2pt}};
+%\end{scope}
+\end{tikzpicture}%
+}
+\hypersetup{hidelinks}
 \begin{document}
 %\thispagestyle{empty}
+\frontmatter
 \begin{titlepage}
-\begin{center}
-\bfseries
-{\LARGE UPGRADING PROGRAM: LEARNING}\\[24pt]
-{\LARGE INSTITUTE FOR TEACHERS}\\[24pt]
-{\LARGE UPLIFT}
-\vfill
-
-{\LARGE MATHEMATICS MODULE}
-\vfill
-
-\textbf{This module belongs to:}\\[24pt]
 
 \noindent
-\hrulefill
-\end{center}
-\newpage
-\thispagestyle{empty}
-\vfil
+\titlefont Upgrading Program:\\
+Learning Institute\\
+for Teachers (UPLIFT)\par
+\epigraph{''Life is not about being comfortable, it's about making a difference.''}%
+{\textsc{Dr. Josette Biyo}\\
+\textit{Executive Director, PSHS}}
+\null\vfill
 \begin{center}
-{\LARGE \bfseries Module Writers}\\[12pt]
-Jonellyn S. Albano (PSHS Ilocos Region Campus)\\
-Daryl R. Alegarbes (PSHS Southern Mindanao Campus)\\
-Ronnie R. Calanno (PSHS Ilocos Region Campus)\\
-Leo Andrei A. Crisologo (PSHS Main Campus)\\
-Maricel B. Dumlao (PSHS Cagayan Valley Campus)\\
-Rommel O. Gregorio (PSHS Cordillera Administrative Region Campus)\\
-Rosalinda O. Luwang (PSHS Cagayan Valley Campus)\\
-Mary Gay Antonette G. Magpantay (PSHS Main Campus)\\
-Ronnalee I. Navasca-Orteza (PSHS Ilocos Region Campus)\\
-Flordelino C. Orteza, Jr. (PSHS Ilocos Region Campus)\\
-Herminigilda C. Salac (PSHS Main Campus)\\
-Fortunato A. Tacuboy III (PSHS Main Campus)
+{\titlefont Mathematics}
 \end{center}
-\vfil
-\begin{center}
-{\LARGE\bfseries Module Editors}\\[12pt]
-Mark John V. Ayaay (PSHS Main Campus)\\
-Leo Andrei A. Crisologo (PSHS Main Campus)\\
-Jose Manresa D. Español IV (PSHS Main Campus)\\
-Kiel F. Granada (PSHS Main Campus)\\
-Mario Danilo R. Llanura (PSHS Main Campus)\\
-Mary Gay Antonette G. Magpantay (PSHS Main Campus)\\
-Herminigilda C. Salac (PSHS Main Campus)\\
-Joyce Marianne B. Simpas (PSHS Main Campus)\\
-Fortunato A. Tacuboy III (PSHS Main Campus)
-\end{center}
-\newpage
-\thispagestyle{empty}
-
-\begin{center}
-{\LARGE\bfseries Module Objectives}
+\null\vfill
+\vspace*{1cm}
+\noindent
+\hfill
+\begin{minipage}{0.85\linewidth}
+    \begin{flushright}
+        \printauthor
+    \end{flushright}
+\end{minipage}
+%
+\begin{minipage}{0.02\linewidth}
+    \rule{1pt}{125pt}
+\end{minipage}
+\titlepagedecoration
+\end{titlepage}
+\chapter*{Preface}
+\section*{Objectives}
 \begin{enumerate}
 \item To be able to apply different perspectives in solving mathematics
 problems.
@@ -351,12 +485,11 @@ of content and in constructing quality assessment tools.
 \item To be able to clarify common misconceptions in mathematics.
 \item To be able to appreciate mathematics.
 \end{enumerate}
-\end{center}
-\end{titlepage}
-\thispagestyle{empty}
+%\thispagestyle{empty}
 \tableofcontents
-\thispagestyle{empty}
+%\thispagestyle{empty}
 %\tableoffigures
+\mainmatter
 \pagestyle{fancy}
 \nocite{*}
 \input{chapter1.tex}
@@ -378,7 +511,9 @@ of content and in constructing quality assessment tools.
 \input{chapter9.tex}
 \printbibliography[keyword=Module9,heading=subbibliography,title={REFERENCES}]
 \input{chapter10.tex}
+\printbibliography[keyword=Module10,heading=subbibliography,title={REFERENCES}]
 \input{chapter11.tex}
+\printbibliography[keyword=Module11,heading=subbibliography,title={REFERENCES}]
 \printbibliography
 \printindex
 
