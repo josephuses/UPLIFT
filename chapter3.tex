@@ -30,7 +30,7 @@ time, angle, and temperature; and
 Answer the following questions.
 \begin{enumerate}
 \item Which of the following line segments is the longest? Which is the shortest?
-
+\begin{center}
 \begin{tikzpicture}
 \draw (0,0) -- (2,0);
 \node [below] at (0,0) {A};
@@ -39,16 +39,17 @@ Answer the following questions.
 \draw (0,0) -- (3,0);
 \node [below] at (0,0) {C};
 \node [below] at (3,0) {D};
-  \begin{scope}[xshift=4cm]
+	\begin{scope}[xshift=4cm]
 	\draw (0,0) -- (1.5,0);
 	\node [below] at (0,0) {E};
 	\node [below] at (1.5,0) {F};
 	\end{scope}
 \end{scope}
 \end{tikzpicture}
+\end{center}
 \item Which of the given figures occupy more space than the others?
-
-\begin{tikzpicture}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
 \draw (0,0) rectangle (3,2);
 \begin{scope}[xshift=4cm]
 \draw (0,0) -- (1.5,1) -- (3,0) -- cycle;
@@ -57,9 +58,10 @@ Answer the following questions.
 	\end{scope}
 \end{scope}
 \end{tikzpicture}
+\end{center}
 \item Which of the given containers have more liquid than the others?
-
-\begin{tikzpicture}
+\begin{center}
+\begin{tikzpicture}[scale=0.7]
 \draw (0,0) ellipse (2 and 0.5);
 \draw (-2,0) -- (-2,-2);
 \draw (-2,-2) arc (180:360:2 and 0.5);
@@ -77,6 +79,7 @@ Answer the following questions.
 		\end{scope}
 	\end{scope}
 \end{tikzpicture}
+\end{center}
 \end{enumerate}
 How do you answer these questions? To be able to answer these questions you need to
 compare one figure with the other figures. Then you compare also the quantities or the
