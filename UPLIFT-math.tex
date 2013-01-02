@@ -1,3 +1,4 @@
+\PassOptionsToPackage{pdftex}{hyperref}
 \documentclass[svgnames,a4paper]{book}
 
 \usepackage[inner=1.5in,outer=1in,top=1in,bottom=1in]{geometry}
@@ -18,7 +19,11 @@
 %\usepackage{parpic}
 %\usepackage{MnSymbol}
 \usepackage{multirow}
-\usepackage{textcomp}
+%\usepackage{textcomp}
+\usepackage{mathtools}
+\usepackage{adjustbox}
+\newcommand{\textpeso}{\ensuremath{\mathrlap{\adjustbox{raise=2.4pt}{=}}{\mathrm{P}}}}
+
 \def\anumber{\textit{a number}}
 %\usepackage{caption}
 %\usepackage{titlesec}
@@ -32,7 +37,9 @@
 %\newcounter{module}
 %\renewcommand\thechapter{\arabic{module}}
 \usepackage{titlesec}
-\titleformat{\chapter}[display]{\Huge}{
+\def\LinkColor{blue!50!black}
+\def\bingo{blue!50}
+\titleformat{\chapter}[display]{\Huge\bfseries\color{\LinkColor}}{
 \begin{tikzpicture}[remember picture,overlay,xshift=5in,yshift=0.25in]
 \node (chapter) [align=center] {Module};
 \node at (chapter.east) [gray,opacity=0.5] {\fontsize{80}{80}\bfseries\itshape\selectfont\thechapter};
@@ -68,7 +75,7 @@
 \usepackage{makeidx}
 \makeindex
 \newcommand{\Php}{Php}
-\newcommand{\Bold}[1]{\textbf{#1}\index{#1}}
+\newcommand{\Bold}[1]{\textbf{\textcolor{\LinkColor}{#1}}\index{#1}}
 \newcommand{\Solution}{\textbf{Solution}}
 \newcommand*{\CHECK}{\textbf{Check}}
 \newcommand{\Ital}[1]{\textit{#1}}
@@ -125,7 +132,7 @@ linewidth=8pt,
 frametitlerule=true,
 roundcorner=10pt,
 ]{myshadowbox}
-\newenvironment{property}{\begin{myshadowbox}}{\end{myshadowbox}}
+%\newenvironment{property}{\begin{myshadowbox}}{\end{myshadowbox}}
 
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.7}
@@ -172,7 +179,7 @@ roundcorner=10pt,
 \usepackage{fancyhdr}
 %\fancyhead{}%
 \fancyfoot{}%
-\fancyfoot[RE,LO]{\footnotesize \color{blue!50!black} MATHEMATICS MODULE || Page \textbf{\thepage} of \textbf{\pageref{LastPage}}}
+\fancyfoot[RE,LO]{\footnotesize \color{\LinkColor} MATHEMATICS MODULE || Page \textbf{\thepage} of \textbf{\pageref{LastPage}}}
 %\fancyhead[RE,LO]{\thechapter}
 \fancyhead[RO,LE]{\footnotesize \color{blue!50!black} \textcopyright{} UPLIFT}
 \newcounter{example}[chapter]
@@ -280,6 +287,28 @@ frametitle={%
 \tikz[baseline=(current bounding box.east),outer sep=0pt]
 \node[anchor=east,rectangle,fill=blue!20]
 {\strut Definition~\thechapter.\thetheo:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+linewidth=2pt,topline=true,
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+\newcounter{property}[chapter]
+\newenvironment{property}[1][]{%
+\refstepcounter{property}%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20]
+{\strut Property~\thechapter.\theproperty};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20]
+{\strut Property~\thechapter.\theproperty:~#1};}}%
 }%
 \mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
 linewidth=2pt,topline=true,
@@ -439,7 +468,9 @@ frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
 %\end{scope}
 \end{tikzpicture}%
 }
-\hypersetup{hidelinks}
+
+\hypersetup{hidelinks, breaklinks=true,colorlinks=true,allcolors=\LinkColor}
+\renewcommand{\textcent}{\ensuremath{\mathrlap{/}{\mathrm{c}}}}
 \begin{document}
 %\thispagestyle{empty}
 \frontmatter
@@ -449,7 +480,7 @@ frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
 \titlefont Upgrading Program:\\
 Learning Institute\\
 for Teachers (UPLIFT)\par
-\epigraph{''Life is not about being comfortable, it's about making a difference.''}%
+\epigraph{``Life is not about being comfortable, it's about making a difference.''}%
 {\textsc{Dr. Josette Biyo}\\
 \textit{Executive Director, PSHS}}
 \null\vfill
