@@ -1,4 +1,4 @@
-\ProvidesClass{uplift.cls}[2012/01/03 version 0.01 uplift class]
+\ProvidesClass{uplift}[2012/01/03 version 0.01 uplift class]
 \NeedsTeXFormat{LaTeX2e}[1996/06/01]%  
 
 \DeclareOption*{\InputIfFileExists{\CurrentOption.min}{}{%
@@ -10,16 +10,6 @@
 
 \RequirePackage[inner=1.5in,outer=1in,top=1in,bottom=1in]{geometry}
 
-% \RequirePackage {ifluatex}
-
-%\RequirePackage{fontspec}
-%\defaultfontfeatures{Ligatures=TeX, Numbers=OldStyle, SmallCapsFeatures={LetterSpace=8, Numbers=OldStyle}}
-
-%\setmainfont
-% {Linux Libertine}
-% {Gentium Book Basic}
-%\RequirePackage{pst-pdf}
-%\RequirePackage{graphicx}
 \RequirePackage[section]{placeins}
 \RequirePackage{cprotect}
 \RequirePackage{picins}
@@ -32,17 +22,12 @@
 \newcommand{\textpeso}{\ensuremath{\mathrlap{\adjustbox{raise=2.4pt}{=}}{\mathrm{P}}}}
 
 \def\anumber{\textit{a number}}
-%\RequirePackage{caption}
-%\RequirePackage{titlesec}
+
 \newcommand{\Answers}{\textbf{Answers}}
 \newcommand{\Segment}[1]{\overline{#1}}
 \newcommand{\Problems}{\textbf{Problems}}
 \newcommand{\ray}[1]{\overrightarrow{#1}}
-%\RequirePackage{tabularx}
-%\newenvironment{\begin{answer}}{\begin{enumerate}}{\end{enumerate}}
-%\renewcommand\thepart{\Alph{part}}
-%\newcounter{module}
-%\renewcommand\thechapter{\arabic{module}}
+
 \RequirePackage{titlesec}
 \def\LinkColor{blue!50!black}
 \def\bingo{blue!50}
@@ -51,7 +36,7 @@
 \node (chapter) [align=center] {Module};
 \node at (chapter.east) [gray,opacity=0.5] {\fontsize{80}{80}\bfseries\itshape\selectfont\thechapter};
 \end{tikzpicture}
-}{12pt}{}[\color{blue!50}\kern2pt\hrule\kern1pt]
+}{12pt}{}[\color{\LinkColor}\kern2pt\hrule\kern1pt]
 
 %\titleformat{\section}[display]{\Large}{}{12pt}{\thesection}[\color{blue!50}\kern2pt\hrule\kern1pt]
 
@@ -71,12 +56,6 @@
 %\RequirePackage[frenchmath,italic]{mathastext}
 %\RequirePackage{newtxtext}
 \RequirePackage{newtxmath}
-%\RequirePackage{ntxmath}
-%\RequirePackage{newtx}
-%\RequirePackage{fontspec}
-%\setsansfont [Ligatures=TeX,Scale=MatchLowercase] {Myriad Pro}
-%   \setmainfont [Ligatures=TeX,Scale=MatchLowercase] {Charter BT}
- %  \setmathfont 
 \newenvironment{tabularu}{\begin{tabular}}{\end{tabular}}
 \newenvironment{Quote}{\begin{quote}}{\end{quote}}
 \RequirePackage{makeidx}
@@ -112,7 +91,7 @@
 \DeclareCaptionLabelSeparator*{newlinerule}{\par\kern2pt\rule{2in}{1pt}\par\kern1pt}
 
 \captionsetup{
-  font={footnotesize,singlespacing},
+  font={small,singlespacing},
   format=plain,
   labelformat=simple,
   labelsep=newlinerule,

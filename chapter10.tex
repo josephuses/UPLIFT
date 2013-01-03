@@ -136,6 +136,7 @@ To make a table which summarizes the data, follow these steps:
 \begin{enumerate}
 \item Make a table as shown.
 \end{enumerate}
+\begin{center}
 \begin{tabular}{cccc}
 \hline
 A & B & C & D \\
@@ -151,6 +152,7 @@ Muslim
 \hline
  & Total & (n) &  \\
 \end{tabular}
+\end{center}
 \item Tally the data and place the results in column B.
 \item Count the tallies and place the corresponding frequency in column C.
 \item Find the percentage in each class by using the formula:
@@ -199,15 +201,17 @@ Class Limit & Class Limit & Boundary & Boundary & Mark &  & Frequency\\
 \hline
 \end{tabularu}
 \end{center}
+\newpage
 \begin{example}
 \Item Given the scores of sophomore students in Mathematics 1 periodical test,
 construct the frequency distribution.
-
+\begin{center}
 \begin{tabularu}{llllllllll}
 50 & 55 & 60 & 41 & 34 & 58 & 37 & 35 & 56 & 59\\
 48 & 20 & 65 & 63 & 61 & 28 & 36 & 55 & 53 & 60\\
 33 & 45 & 56 & 60 & 42 & 56 & 41 & 45 & 57 & 59\\
 \end{tabularu}
+\end{center}
 
 \Solution
 
@@ -228,7 +232,7 @@ k&=\sqrt{30}\\
  &\approx 5
 \end{align*}
 Another way of finding the number of intervals is using the \Bold{Sturges' Rule}:
-$K = 1 + 3.3\log n$; where n is the number of samples.
+$K = 1 + 3.3\log n$; where $n$ is the number of samples.
 
 For the purposes of this module as Introduction to Statistics, the teacher should set
 the number of intervals ($k$). Usually, limit the data to $20-50$, using $4-6$ classes.
@@ -366,7 +370,7 @@ data\\
 };
 \end{axis}
 \end{tikzpicture}
-\captionof{figure}{Scores of Sophomore Students in Mathematics 1 Periodical Test (Histogram)}
+\captionof{figure}{Scores of Sophomore Students in Mathematics 1 Periodical Test (Histogram)}\label{chap10fig:7}
 \end{center}
 \end{myenumerate}
 \end{example}
@@ -399,13 +403,13 @@ ytick={0,5,10,15}]
 {(22,1) (31,4) (40,5) (49,5) (58,13) (67,2)};
 \end{axis}
 \end{tikzpicture}
-\captionof{figure}{Scores of Sophomore Students in Mathematics 1 Periodical Test (Line Graph)}
+\captionof{figure}{Scores of Sophomore Students in Mathematics 1 Periodical Test (Line Graph)}\label{chap10fig:8}
 \end{center}
 \end{myenumerate}
 \end{example}
 \begin{definition}[Bar Graph]
 A \Bold{bar graph} is an illustration of the data using bars in the coordinate plane.
-This can be used for quantitative data. % Verify that bar graphs are only used for qualitative data.
+Bar graphs are used for qualitative data. % Verify that bar graphs are only used for qualitative data. % Edit, 2012-01-03: Changed quantitative data to qualitative data.
 \end{definition}
 \begin{example}
 \Item The table shows the educational attainment distribution of parent-respondents.
@@ -447,6 +451,8 @@ bar width=30pt,
 \addplot coordinates {(High School Graduate,10) (College Graduate,23) (MA/MS Graduate,5) (Ph.D. Graduate,3)};
 \end{axis}
 \end{tikzpicture}
+\captionof{figure}{Bar graph for the \textit{``Educational Attainment of Parent-Respondents"}}
+\label{chap10fig:6}
 \end{center}
 \end{myenumerate}
 The bar graph shows that \textit{College Graduate} had the highest frequency and Ph D graduate
@@ -523,6 +529,34 @@ conclusion for this chart.
 Possible Answers: From the four provinces, Pangasinan has the most number of living
 individuals. More than fifty percent of the region's population hales in Pangasinan.
 \end{example}
+
+% This subsubsection was contributed by Joseph Tabadero...
+\subsubsection*{When to Use a Histogram and When to Use a Bar Graph?}
+Go back to the bar graph in Figure \eqref{chap10fig:6} and the histogram in Figure \eqref{chap10fig:7} then take time to ask yourself the following questions before reading the next subsections.
+
+\begin{myenumerate}
+\item Which one uses bars to represent categories? Which one uses bars to represent continuous data?
+\item Which between bar graph and histogram does rearrangement of the bars (i.e., move one bar before or after another) does \textit{not} matter?
+\end{myenumerate}
+
+If you have given the questions some thought then you would have inferred the following.
+\subsubsection*{Use bar graphs when\ldots}
+you are dealing with \Bold{categorical data} or \Bold{nominal data}, which are data that can be classified into \textit{categories}. Generally, categorical data and nominal data are called \Bold{qualitative data}. It does not matter when you move one category before or after another--they don't lose their meaning by your doing so. That is why bar graphs are drawn with gaps between each bar to tell the reader that each bar (which reprents a category) is distinct from each other.
+
+\subsubsection*{Use histogram when\ldots}
+you are dealing with \Bold{continuous data} where each bar, which is called a \Bold{bin}, is used to represent a \textit{range} of data rather than a category. You \textit{cannot} rearrange the bins of a histogram. The continuity of the data is the reason why there are \textit{no} gaps between each bin of the histogram. You will better appreciate the continuity of data reprsented by a histogram when you connect the class marks in Figure \eqref{chap10fig:7} with line segments, then you get Figure \eqref{chap10fig:8}.
+
+\begin{example}
+\Item Juanita is asked to create an appropriate graph to represent data taken from an item in the National Achievement Test. She was asked to compare how many students chose among the numeral choices: 5, 6, 7, 8. Which graph shall she use: a bar graph or a histogram? How can she justify her answer?
+
+\Solution
+
+Juanita should construct a \textit{bar graph}. In this case, the numbers 5, 6, 7, and 8 are categories and not ranges. It is just that, in this case, the category numbers are also labels.
+
+\end{example}
+
+% until here. Joseph
+
 \subsection*{MEASURES OF CENTRAL TENDENCY}
 A data can be summarized by using a single number, which is the
 concentration point of scores. The three (3) measures of central tendency are the
@@ -973,7 +1007,7 @@ September 2000.
 \draw (333:3cm) -- (333:4cm) node [below right,text width=1.5cm,align=center] {Europe 9\%};
 \draw (354.6:3cm) -- (354.6:4cm) node [right,text width=1.5cm,align=center] {Australia 3\%};
 \end{tikzpicture}
-\captionof{figure}{Percentage of OFWs by Place of Work: April to September 2000. Source: \url{http://www.census.gov.ph/}}\label{chap10fig:5}
+\captionof{figure}{Percentage of OFWs by Place of Work: April to September 2000. Source: \textcite{census1}}\label{chap10fig:5}
 \end{center}
 
 What conclusion can you draw from the chart?
@@ -999,7 +1033,7 @@ San Ildefonso, Ilocos Sur. Find the mean, median and mode.
 47 & 35 & 57 & 55 & 36 & 45 & 32 & 45 & 42 & 36\\
 \end{tabular}
 \end{center}
-   \begin{myenumerate}
+	\begin{myenumerate}
 	\item\label{chap10item:1} Set up a frequency distribution using 6 classes with the smallest starting at 21.
 	\item Derive a cumulative frequency distribution for \eqref{chap10item:1}.
 	\item Draw a histogram \eqref{chap10item:1}.
@@ -1038,24 +1072,24 @@ satisfactory if 85-89, and P or poor if 80-84. Teacher X got these scores: 90, 9
 98, and 83. The school head gave him an S. How might Teacher X convince the head
 that he deserve a higher grade?
 
-\item The bars on this graph appear to indicate that Salesgirl X has sold 3 times as many
+\item\label{chap10item:2} The bars on this graph appear to indicate that Salesgirl X has sold 3 times as many
 garments as Salesgirl W. Salesgirl W appears to have sold twice as many as Salesgirl Y.
 And the difference between the sales of Salesgirl X and Salesgirl Z is not very large.
 \begin{enumerate}
 \item Discuss why the graph is misleading.
 \item Create a graph that accurately reflects the data.
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=0.8,transform shape]
 \draw (0,0) -- (0,5);
 \draw (0,0) -- (6.5,0);
 \foreach \y/\ytext in {1/30,2/40,3/50,4/60,5/70}
 	\node [left=5pt] at (0,\y) {\ytext};
 \foreach \y in {1,2,3,4,5}
 	\draw (-2pt,\y) -- (2pt,\y);
-\draw (0.5,0) rectangle (1.5, 1.2);
-\draw (2,0) rectangle (3, 4);
-\draw (3.5,0) rectangle (4.5,.9);
-\draw (5,0) rectangle (6,5);
+\filldraw[fill=mybluecolor] (0.5,0) rectangle (1.5, 1.2);
+\filldraw[fill=mybluecolor] (2,0) rectangle (3, 4);
+\filldraw[fill=mybluecolor] (3.5,0) rectangle (4.5,.9);
+\filldraw[fill=mybluecolor] (5,0) rectangle (6,5);
 \foreach \x/\xtext in {1/W,2.5/X,4/Y,5.5/Z}
 	\node [below] at (\x,0) {\xtext};
 \node [below=10pt] at (3.25,0) {Sales girl};
@@ -1063,9 +1097,158 @@ And the difference between the sales of Salesgirl X and Salesgirl Z is not very 
 \end{tikzpicture}
 \end{center}
 \end{enumerate}
+\item Given the same data as in item \eqref{chap10item:2}, discuss why the graph below is misleading.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8,transform shape]
+\draw (0,0) -- (0,8);
+\draw (0,0) -- (6.5,0);
+\foreach \y/\ytext in {1/10,2/20,3/30,4/40,5/50,6/60,7/70}
+	\node [left=5pt] at (0,\y) {\ytext};
+\foreach \y in {1,2,3,4,5}
+	\draw (-2pt,\y) -- (2pt,\y);
+\filldraw[fill=mybluecolor] (0.5,0) rectangle (1.5, 3.2);
+\filldraw[fill=red] (1.75,0) rectangle (3.25, 6);
+\filldraw[fill=mybluecolor] (3.5,0) rectangle (4.5,2.9);
+\filldraw[fill=mybluecolor!50] (5.25,0) rectangle (5.75,7);
+\foreach \x/\xtext in {1/W,2.5/X,4/Y,5.5/Z}
+	\node [below] at (\x,0) {\xtext};
+\node [below=10pt] at (3.25,0) {Sales girl};
+\node [left=30pt,yshift=1.25cm,rotate=90] at (0,2.5) {Garment Sales};
+\end{tikzpicture}
+\end{center}
 \end{myenumerate}
 
-\subsubsection*{CARRYING OUT A SURVEY}
+\subsubsection*{More on Misleading Statistics}
+The following are more examples of misleading graphs taken from \textcite[Chapter 7]{tantau}.
+\begin{example}
+\Item
+\begin{Quote}
+``At the
+end of a seminar a lecturer asked the participants for feedback. Of
+the 50 participants, 30 returned the feedback form. According to the
+feedback, three participants considered the seminar ``very good,''
+nine considered it  ``good,'' ten ``ok,'' eight ``bad,'' and no one thought
+that the seminar was ``very bad.''
+
+A simple way of summing up this information is the following table:
+
+\medskip
+\begin{tabular}{lp{3.75cm}r}
+  \emph{Rating given} & \raggedright\emph{Participants (out of 50) who gave this rating} &
+  \emph{Percentage} \\[1.75em]
+  ``very good'' & \hfil\hphantom{0}3\hfil & \hphantom{0}6\% \\
+  ``good'' & \hfil\hphantom{0}9\hfil & 18\% \\
+  ``ok'' & \hfil10\hfil & 20\% \\
+  ``bad'' & \hfil\hphantom{0}8\hfil & 16\% \\
+  ``very bad'' & \hfil\hphantom{0}0\hfil & \hphantom{0}0\% \\[2mm]
+  none & \hfil20\hfil & 40\% \\
+\end{tabular}
+
+\bigskip
+What the lecturer did was to visualize the data using a 3D bar
+diagram. It looked like this (except that in reality the numbers
+where typeset using some extremely low-resolution bitmap font and
+were near-unreadable):
+
+\bigskip
+\par
+\begin{tikzpicture}[y=0.03cm,z=3mm]
+  \foreach \y in {0,20,40,60,80,100}
+    \draw[dashed] (0,\y,0) node[left] {\y} -- (0,\y,1)  -- (6,\y,1);
+
+  \draw (0,0,0) -- (0,100,0)  (0,0,1) -- (0,100,1);
+  \draw (0,0,0) -- (6,0,0);
+
+  \foreach \x/\xtext/\height in {1/very good/10,2/good/30,3/ok/33,4/bad/27,5/very bad/0}
+  {
+    \draw (\x,0) node[rotate=90,anchor=east] {\xtext};
+
+    \begin{scope}[xshift=\x cm]
+
+    \filldraw[fill=blue!50] (-.3,0,0) rectangle (.3,\height,0);
+    \filldraw[fill=blue!30] (.3,0,0) -- (.3,0,1) -- (.3,\height,1) -- (.3,\height,0) --cycle;
+    \filldraw[fill=blue!20] (-.3,\height,0) -- (.3,\height,0) --
+    (.3,\height,1) -- (-.3,\height,1) --cycle;
+    \end{scope}
+  }
+\end{tikzpicture}
+\bigskip
+
+Both the table and the ``plot'' have about the same size. If your first
+thought is ``the graphic looks nicer than the table,'' try to answer
+the following questions based on the information in the table or in
+the graphic:
+\begin{enumerate}
+\item
+  How many participants where there?
+\item
+  How many participants returned the feedback form?
+\item
+  What percentage of the participants returned the feedback form?
+\item
+  How many participants checked ``very good''?
+\item
+  What percentage out of all participants checked ``very good''?
+\item
+  Did more than a quarter of the participants check ``bad'' or ``very bad''?
+\item
+  What percentage of the participants that returned the form checked ``very good''?''
+\end{enumerate}
+
+Tantau proposed the following modified pie chart instead to represent the data \parencite*{tantau}.
+
+\begin{tikzpicture}
+  \colorlet{good}{green!75!black}
+  \colorlet{bad}{red}
+  \colorlet{neutral}{black!60}
+  \colorlet{none}{white}
+
+  \node[align=center,text width=3cm]{Ratings given by 50~participants};
+
+  \begin{scope}[line width=4mm,rotate=270]
+    \draw[good]          (-123:2cm) arc (-123:-101:2cm);
+    \draw[good!60!white] (-36:2cm) arc (-36:-101:2cm);
+    \draw[neutral]       (-36:2cm) arc (-36:36:2cm);
+    \draw[bad!60!white]  (36:2cm)  arc (36:93:2cm);
+
+    \newcount\mycount
+    \foreach \angle in {0,72,...,3599}
+    {
+      \mycount=\angle\relax
+      \divide\mycount by 10\relax
+      \draw[black!15,thick] (\the\mycount:18mm) -- (\the\mycount:22mm);
+    }
+
+    \draw (0:2.2cm) node[below] {``ok'': 10 (20\%)};
+    \draw (165:2.2cm) node[above] {none: 20 (40\%)};
+    \draw (-111:2.2cm) node[left] {``very good'': 3 (6\%)};
+    \draw (-68:2.2cm) node[left] {``good'': 9 (18\%)};
+    \draw (65:2.2cm) node[right] {``bad'': 8 (16\%)};
+    \draw (93:2.2cm) node[right] {``very bad'': 0 (0\%)};
+  \end{scope}
+  \draw[gray] (0,0) circle (2.2cm) circle (1.8cm);
+\end{tikzpicture}
+\end{Quote}
+\item \textcite[Section 7.6, pages 88--89]{tantau} discouraged the use of 3D graphics in presenting statistical data. Figure \eqref{chap10fig:9} is another example of a 3D pie chart gone wrong.
+
+\begin{center}
+\includegraphics[width=\linewidth]{evilpiechart1}
+\captionof{figure}{Redrawn from a pie chart in \emph{Die Zeit}, June 4th, 2005 by \textcite{tantau} using Ti\textit{k}Z.}\label{chap10fig:9}
+\end{center}
+
+Discuss why this graph is not informative and see the answer in \textcite[pages 88--89]{tantau}.
+\item That 3D graphics and pie charts are ``evil'' in the sense that they mislead is illustrated in Figure \eqref{chap10fig:10}.
+
+\begin{center}
+\includegraphics[width=3.5in,keepaspectratio]{evilpiechart3}
+\captionof{figure}{Source: \textcite{tufte1}}\label{chap10fig:10}
+\end{center}
+
+An alternative to pie charts is discussed extensively in \textcite{few}.
+\end{example}
+
+\subsubsection*{SUGGESTED ACTIVITY: CARRYING OUT A SURVEY}
 This is to formalize the learnings you gained from this module. The objectives of
 the activity are the following:
 \begin{enumerate}
